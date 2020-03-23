@@ -3,39 +3,24 @@ Circuit: * C:\Gits\psu\simulations\2n2222-as-temp.asc
 WARNING: Less than two connections to node COM.  This node is used by R6.
 Direct Newton iteration for .op point succeeded.
 .step temp=0°C
-.step temp=5°C
 .step temp=10°C
-.step temp=15°C
 .step temp=20°C
-.step temp=25°C
 .step temp=30°C
-.step temp=35°C
 .step temp=40°C
-.step temp=45°C
 .step temp=50°C
-.step temp=55°C
 .step temp=60°C
-.step temp=65°C
 .step temp=70°C
-.step temp=75°C
 .step temp=80°C
-.step temp=85°C
 .step temp=90°C
-.step temp=95°C
 .step temp=100°C
-.step temp=105°C
 .step temp=110°C
-.step temp=115°C
 .step temp=120°C
-.step temp=125°C
 .step temp=130°C
-.step temp=135°C
 .step temp=140°C
-.step temp=145°C
 .step temp=150°C
 
-Date: Thu Mar 19 21:27:03 2020
-Total elapsed time: 1.226 seconds.
+Date: Mon Mar 23 13:07:57 2020
+Total elapsed time: 0.517 seconds.
 
 tnom = 27
 temp = 150
@@ -46,8 +31,8 @@ tranpoints = 125
 accept = 125
 rejected = 0
 matrix size = 21
-fillins = 15
+fillins = 13
 solver = Normal
-Matrix Compiler1: 1.69 KB object code size  0.4/0.2/[0.2]
-Matrix Compiler2: off  [0.2]/0.3/0.2
+Matrix Compiler1: 1.65 KB object code size  0.3/0.1/[0.1]
+Matrix Compiler2: 2.13 KB object code size  0.1/0.2/[0.1]
 
