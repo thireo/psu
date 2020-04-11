@@ -1,0 +1,139 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R4
+U 1 1 5E888D52
+P 4650 3625
+F 0 "R4" V 4443 3625 50  0000 C CNN
+F 1 "R" V 4534 3625 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-2_Vertical" V 4580 3625 50  0001 C CNN
+F 3 "~" H 4650 3625 50  0001 C CNN
+	1    4650 3625
+	0    1    1    0   
+$EndComp
+$Comp
+L Mechanical:Heatsink HS1
+U 1 1 5E889697
+P 4100 2900
+F 0 "HS1" H 4242 3021 50  0000 L CNN
+F 1 "Heatsink" H 4242 2930 50  0000 L CNN
+F 2 "athir:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm" H 4112 2900 50  0001 C CNN
+F 3 "~" H 4112 2900 50  0001 C CNN
+	1    4100 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:Heatsink HS2
+U 1 1 5E88A94D
+P 5000 2900
+F 0 "HS2" H 5142 3021 50  0000 L CNN
+F 1 "Heatsink" H 5142 2930 50  0000 L CNN
+F 2 "athir:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm" H 5012 2900 50  0001 C CNN
+F 3 "~" H 5012 2900 50  0001 C CNN
+	1    5000 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5E88AFE3
+P 4650 3425
+F 0 "R3" V 4443 3425 50  0000 C CNN
+F 1 "R" V 4534 3425 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-2_Vertical" V 4580 3425 50  0001 C CNN
+F 3 "~" H 4650 3425 50  0001 C CNN
+	1    4650 3425
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5E88C961
+P 4650 3225
+F 0 "R2" V 4443 3225 50  0000 C CNN
+F 1 "R" V 4534 3225 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-2_Vertical" V 4580 3225 50  0001 C CNN
+F 3 "~" H 4650 3225 50  0001 C CNN
+	1    4650 3225
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E88C96B
+P 4650 3025
+F 0 "R1" V 4443 3025 50  0000 C CNN
+F 1 "R" V 4534 3025 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-2_Vertical" V 4580 3025 50  0001 C CNN
+F 3 "~" H 4650 3025 50  0001 C CNN
+	1    4650 3025
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4800 3025 4900 3025
+Wire Wire Line
+	4900 3025 4900 3225
+Wire Wire Line
+	4800 3625 4900 3625
+Connection ~ 4900 3625
+Wire Wire Line
+	4900 3625 4900 3800
+Wire Wire Line
+	4800 3425 4900 3425
+Connection ~ 4900 3425
+Wire Wire Line
+	4900 3425 4900 3625
+Wire Wire Line
+	4800 3225 4900 3225
+Connection ~ 4900 3225
+Wire Wire Line
+	4900 3225 4900 3425
+Wire Wire Line
+	4500 3025 4400 3025
+Wire Wire Line
+	4400 3025 4400 3225
+Wire Wire Line
+	4500 3625 4400 3625
+Connection ~ 4400 3625
+Wire Wire Line
+	4400 3625 4400 3800
+Wire Wire Line
+	4400 3425 4500 3425
+Connection ~ 4400 3425
+Wire Wire Line
+	4400 3425 4400 3625
+Wire Wire Line
+	4500 3225 4400 3225
+Connection ~ 4400 3225
+Wire Wire Line
+	4400 3225 4400 3425
+$Comp
+L Connector:Conn_01x02_Male J1
+U 1 1 5E88F4E2
+P 4600 4125
+F 0 "J1" V 4754 3937 50  0000 R CNN
+F 1 "Conn_01x02_Male" V 4663 3937 50  0000 R CNN
+F 2 "athir:230VAC_PLUG" H 4600 4125 50  0001 C CNN
+F 3 "~" H 4600 4125 50  0001 C CNN
+	1    4600 4125
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4600 3925 4600 3800
+Wire Wire Line
+	4600 3800 4400 3800
+Wire Wire Line
+	4700 3925 4700 3800
+Wire Wire Line
+	4700 3800 4900 3800
+$EndSCHEMATC

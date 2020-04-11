@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:electro-load-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -15,55 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Device:LED_ABRG D?
-U 1 1 5E7F5ED6
-P 2400 2125
-AR Path="/5E7F5ED6" Ref="D?"  Part="1" 
-AR Path="/5E7EC7EF/5E7F5ED6" Ref="D3"  Part="1" 
-F 0 "D3" V 2446 1795 50  0000 R CNN
-F 1 "STATUS" V 2355 1795 50  0000 R CNN
-F 2 "LED_THT:LED_D5.0mm-4_RGB_Wide_Pins" H 2400 2125 50  0001 C CNN
-F 3 "~" H 2400 2125 50  0001 C CNN
-	1    2400 2125
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R_Small R?
-U 1 1 5E7F5EDC
-P 2400 1725
-AR Path="/5E7F5EDC" Ref="R?"  Part="1" 
-AR Path="/5E7EC7EF/5E7F5EDC" Ref="R21"  Part="1" 
-F 0 "R21" H 2459 1771 50  0000 L CNN
-F 1 "200" H 2459 1680 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 2400 1725 50  0001 C CNN
-F 3 "~" H 2400 1725 50  0001 C CNN
-	1    2400 1725
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 1825 2400 1925
-$Comp
-L power:+5V #PWR?
-U 1 1 5E7F5EE3
-P 2400 1600
-AR Path="/5E7F5EE3" Ref="#PWR?"  Part="1" 
-AR Path="/5E7EC7EF/5E7F5EE3" Ref="#PWR041"  Part="1" 
-F 0 "#PWR041" H 2400 1450 50  0001 C CNN
-F 1 "+5V" H 2415 1773 50  0000 C CNN
-F 2 "" H 2400 1600 50  0001 C CNN
-F 3 "" H 2400 1600 50  0001 C CNN
-	1    2400 1600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 1600 2400 1625
-Text Label 2200 2325 3    50   ~ 0
-STATUS_R
-Text Label 2400 2325 3    50   ~ 0
-STATUS_G
-Text Label 2600 2325 3    50   ~ 0
-STATUS_B
-$Comp
 L athir:RC1602A U?
 U 1 1 5E8030BB
 P 4975 2325
@@ -76,20 +26,6 @@ F 3 "http://www.raystar-optronics.com/down.php?ProID=18" H 5075 2225 50  0001 C 
 	1    4975 2325
 	1    0    0    -1  
 $EndComp
-Text Label 4575 1825 2    50   ~ 0
-LCD_RS
-Text Label 4575 1925 2    50   ~ 0
-LCD_RW
-Text Label 4575 2025 2    50   ~ 0
-LCD_EN
-Text Label 4575 2825 2    50   ~ 0
-LCD_DB7
-Text Label 4575 2725 2    50   ~ 0
-LCD_DB6
-Text Label 4575 2625 2    50   ~ 0
-LCD_DB5
-Text Label 4575 2525 2    50   ~ 0
-LCD_DB4
 NoConn ~ 4575 2125
 NoConn ~ 4575 2225
 NoConn ~ 4575 2325
@@ -99,8 +35,8 @@ L power:GND #PWR?
 U 1 1 5E8030CC
 P 4975 3050
 AR Path="/5E8030CC" Ref="#PWR?"  Part="1" 
-AR Path="/5E7EC7EF/5E8030CC" Ref="#PWR043"  Part="1" 
-F 0 "#PWR043" H 4975 2800 50  0001 C CNN
+AR Path="/5E7EC7EF/5E8030CC" Ref="#PWR038"  Part="1" 
+F 0 "#PWR038" H 4975 2800 50  0001 C CNN
 F 1 "GND" H 4980 2877 50  0000 C CNN
 F 2 "" H 4975 3050 50  0001 C CNN
 F 3 "" H 4975 3050 50  0001 C CNN
@@ -114,8 +50,8 @@ L power:+5V #PWR?
 U 1 1 5E8030D3
 P 4975 1575
 AR Path="/5E8030D3" Ref="#PWR?"  Part="1" 
-AR Path="/5E7EC7EF/5E8030D3" Ref="#PWR042"  Part="1" 
-F 0 "#PWR042" H 4975 1425 50  0001 C CNN
+AR Path="/5E7EC7EF/5E8030D3" Ref="#PWR037"  Part="1" 
+F 0 "#PWR037" H 4975 1425 50  0001 C CNN
 F 1 "+5V" H 4990 1748 50  0000 C CNN
 F 2 "" H 4975 1575 50  0001 C CNN
 F 3 "" H 4975 1575 50  0001 C CNN
@@ -129,8 +65,8 @@ L Device:R_Small R?
 U 1 1 5E8030DA
 P 5575 2125
 AR Path="/5E8030DA" Ref="R?"  Part="1" 
-AR Path="/5E7EC7EF/5E8030DA" Ref="R22"  Part="1" 
-F 0 "R22" V 5379 2125 50  0000 C CNN
+AR Path="/5E7EC7EF/5E8030DA" Ref="R16"  Part="1" 
+F 0 "R16" V 5379 2125 50  0000 C CNN
 F 1 "2k" V 5470 2125 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 5575 2125 50  0001 C CNN
 F 3 "~" H 5575 2125 50  0001 C CNN
@@ -142,8 +78,8 @@ L Device:R_Small R?
 U 1 1 5E8030E0
 P 5600 2625
 AR Path="/5E8030E0" Ref="R?"  Part="1" 
-AR Path="/5E7EC7EF/5E8030E0" Ref="R23"  Part="1" 
-F 0 "R23" V 5404 2625 50  0000 C CNN
+AR Path="/5E7EC7EF/5E8030E0" Ref="R17"  Part="1" 
+F 0 "R17" V 5404 2625 50  0000 C CNN
 F 1 "220" V 5495 2625 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 5600 2625 50  0001 C CNN
 F 3 "~" H 5600 2625 50  0001 C CNN
@@ -155,8 +91,8 @@ L power:GND #PWR?
 U 1 1 5E8030E6
 P 5450 2700
 AR Path="/5E8030E6" Ref="#PWR?"  Part="1" 
-AR Path="/5E7EC7EF/5E8030E6" Ref="#PWR044"  Part="1" 
-F 0 "#PWR044" H 5450 2450 50  0001 C CNN
+AR Path="/5E7EC7EF/5E8030E6" Ref="#PWR039"  Part="1" 
+F 0 "#PWR039" H 5450 2450 50  0001 C CNN
 F 1 "GND" H 5455 2527 50  0000 C CNN
 F 2 "" H 5450 2700 50  0001 C CNN
 F 3 "" H 5450 2700 50  0001 C CNN
@@ -176,8 +112,8 @@ L power:GND #PWR?
 U 1 1 5E8030F0
 P 5725 2200
 AR Path="/5E8030F0" Ref="#PWR?"  Part="1" 
-AR Path="/5E7EC7EF/5E8030F0" Ref="#PWR045"  Part="1" 
-F 0 "#PWR045" H 5725 1950 50  0001 C CNN
+AR Path="/5E7EC7EF/5E8030F0" Ref="#PWR040"  Part="1" 
+F 0 "#PWR040" H 5725 1950 50  0001 C CNN
 F 1 "GND" H 5730 2027 50  0000 C CNN
 F 2 "" H 5725 2200 50  0001 C CNN
 F 3 "" H 5725 2200 50  0001 C CNN
@@ -193,8 +129,8 @@ L power:+5V #PWR?
 U 1 1 5E8030F8
 P 5800 2575
 AR Path="/5E8030F8" Ref="#PWR?"  Part="1" 
-AR Path="/5E7EC7EF/5E8030F8" Ref="#PWR046"  Part="1" 
-F 0 "#PWR046" H 5800 2425 50  0001 C CNN
+AR Path="/5E7EC7EF/5E8030F8" Ref="#PWR041"  Part="1" 
+F 0 "#PWR041" H 5800 2425 50  0001 C CNN
 F 1 "+5V" H 5815 2748 50  0000 C CNN
 F 2 "" H 5800 2575 50  0001 C CNN
 F 3 "" H 5800 2575 50  0001 C CNN
@@ -205,4 +141,183 @@ Wire Wire Line
 	5800 2575 5800 2625
 Wire Wire Line
 	5800 2625 5700 2625
+Text HLabel 4575 1825 0    50   Input ~ 0
+LCD_RS
+Text HLabel 4575 1925 0    50   Input ~ 0
+LCD_RW
+Text HLabel 4575 2025 0    50   Input ~ 0
+LCD_EN
+Text HLabel 4575 2525 0    50   Input ~ 0
+LCD_DB4
+Text HLabel 4575 2625 0    50   Input ~ 0
+LCD_DB5
+Text HLabel 4575 2725 0    50   Input ~ 0
+LCD_DB6
+Text HLabel 4575 2825 0    50   Input ~ 0
+LCD_DB7
+$Comp
+L Device:Rotary_Encoder_Switch SW2
+U 1 1 5E83A7B7
+P 2550 2950
+F 0 "SW2" H 2550 3317 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 2550 3226 50  0000 C CNN
+F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" H 2400 3110 50  0001 C CNN
+F 3 "~" H 2550 3210 50  0001 C CNN
+	1    2550 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5E842AD8
+P 2100 3425
+F 0 "#PWR0102" H 2100 3175 50  0001 C CNN
+F 1 "GND" H 2105 3252 50  0000 C CNN
+F 2 "" H 2100 3425 50  0001 C CNN
+F 3 "" H 2100 3425 50  0001 C CNN
+	1    2100 3425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 2950 2100 2950
+Wire Wire Line
+	2100 2950 2100 3375
+$Comp
+L Device:R_Small R?
+U 1 1 5E8431F3
+P 1875 3050
+AR Path="/5E8431F3" Ref="R?"  Part="1" 
+AR Path="/5E7EC7EF/5E8431F3" Ref="R34"  Part="1" 
+F 0 "R34" H 1934 3096 50  0000 L CNN
+F 1 "10k" H 1934 3005 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1875 3050 50  0001 C CNN
+F 3 "~" H 1875 3050 50  0001 C CNN
+	1    1875 3050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1975 3050 2250 3050
+$Comp
+L Device:R_Small R?
+U 1 1 5E843CAF
+P 1875 2850
+AR Path="/5E843CAF" Ref="R?"  Part="1" 
+AR Path="/5E7EC7EF/5E843CAF" Ref="R33"  Part="1" 
+F 0 "R33" H 1934 2896 50  0000 L CNN
+F 1 "10k" H 1934 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1875 2850 50  0001 C CNN
+F 3 "~" H 1875 2850 50  0001 C CNN
+	1    1875 2850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1975 2850 2250 2850
+$Comp
+L Device:C_Small C19
+U 1 1 5E844730
+P 1600 3225
+F 0 "C19" H 1692 3271 50  0000 L CNN
+F 1 "100n" H 1600 3150 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1600 3225 50  0001 C CNN
+F 3 "~" H 1600 3225 50  0001 C CNN
+	1    1600 3225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 3125 1600 3050
+Wire Wire Line
+	1600 3050 1775 3050
+$Comp
+L Device:C_Small C18
+U 1 1 5E844FE5
+P 1375 3225
+F 0 "C18" H 1467 3271 50  0000 L CNN
+F 1 "100n" H 1275 3150 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1375 3225 50  0001 C CNN
+F 3 "~" H 1375 3225 50  0001 C CNN
+	1    1375 3225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1775 2850 1375 2850
+Wire Wire Line
+	1375 2850 1375 3125
+Wire Wire Line
+	2100 3375 1600 3375
+Wire Wire Line
+	1600 3375 1600 3325
+Connection ~ 2100 3375
+Wire Wire Line
+	2100 3375 2100 3425
+Wire Wire Line
+	1600 3375 1375 3375
+Wire Wire Line
+	1375 3375 1375 3325
+Connection ~ 1600 3375
+$Comp
+L Device:R_Small R?
+U 1 1 5E848965
+P 3075 2850
+AR Path="/5E848965" Ref="R?"  Part="1" 
+AR Path="/5E7EC7EF/5E848965" Ref="R35"  Part="1" 
+F 0 "R35" H 3134 2896 50  0000 L CNN
+F 1 "10k" H 3134 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 3075 2850 50  0001 C CNN
+F 3 "~" H 3075 2850 50  0001 C CNN
+	1    3075 2850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2975 2850 2850 2850
+$Comp
+L power:GND #PWR0103
+U 1 1 5E84951B
+P 2925 3175
+F 0 "#PWR0103" H 2925 2925 50  0001 C CNN
+F 1 "GND" H 2930 3002 50  0000 C CNN
+F 2 "" H 2925 3175 50  0001 C CNN
+F 3 "" H 2925 3175 50  0001 C CNN
+	1    2925 3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2925 3175 2925 3150
+Wire Wire Line
+	2925 3050 2850 3050
+$Comp
+L Device:C_Small C20
+U 1 1 5E84BAE6
+P 3275 3025
+F 0 "C20" H 3367 3071 50  0000 L CNN
+F 1 "100n" H 3275 2950 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3275 3025 50  0001 C CNN
+F 3 "~" H 3275 3025 50  0001 C CNN
+	1    3275 3025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3275 2925 3275 2850
+Wire Wire Line
+	3275 2850 3175 2850
+Wire Wire Line
+	3275 3125 3275 3150
+Wire Wire Line
+	3275 3150 2925 3150
+Connection ~ 2925 3150
+Wire Wire Line
+	2925 3150 2925 3050
+Text HLabel 3375 2850 2    50   Input ~ 0
+ROT_SW
+Wire Wire Line
+	3375 2850 3275 2850
+Connection ~ 3275 2850
+Text HLabel 1300 2850 0    50   Input ~ 0
+ROT_A
+Wire Wire Line
+	1300 2850 1375 2850
+Connection ~ 1375 2850
+Text HLabel 1275 3050 0    50   Input ~ 0
+ROT_B
+Wire Wire Line
+	1275 3050 1600 3050
+Connection ~ 1600 3050
 $EndSCHEMATC

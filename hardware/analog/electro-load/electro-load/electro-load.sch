@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:electro-load-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
@@ -196,21 +195,13 @@ F 3 "" H 2000 7025 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2000 7025 2000 6975
-Text Label 2600 4875 0    50   ~ 0
-STATUS_R
-Text Label 2600 4975 0    50   ~ 0
-STATUS_G
-Text Label 2600 5975 0    50   ~ 0
-STATUS_B
-Wire Wire Line
-	2875 5175 2600 5175
 Text Label 2600 4475 0    50   ~ 0
 RELAY_EN
 Text Label 2600 5475 0    50   ~ 0
 TEMP_0
 Text Label 2600 5375 0    50   ~ 0
 TEMP_1
-Text Label 2875 5175 0    50   ~ 0
+Text Label 2600 5175 0    50   ~ 0
 CUR_MEAS
 Text Label 4425 1875 0    50   ~ 0
 CUR_SET
@@ -451,51 +442,51 @@ FAN_RPM
 Connection ~ 2600 4000
 Wire Wire Line
 	2600 4000 2400 4000
-Text Label 10975 5675 0    50   ~ 0
+Text Label 8750 5500 0    50   ~ 0
 MOSI
-Text Label 10975 5875 0    50   ~ 0
+Text Label 8750 5700 0    50   ~ 0
 ~RESET
-Text Label 10975 5775 0    50   ~ 0
+Text Label 8750 5600 0    50   ~ 0
 SCK
-Text Label 10975 5575 0    50   ~ 0
+Text Label 8750 5400 0    50   ~ 0
 MISO
 $Comp
 L power:+5V #PWR012
 U 1 1 5E81DCEE
-P 10475 5225
-F 0 "#PWR012" H 10475 5075 50  0001 C CNN
-F 1 "+5V" H 10490 5398 50  0000 C CNN
-F 2 "" H 10475 5225 50  0001 C CNN
-F 3 "" H 10475 5225 50  0001 C CNN
-	1    10475 5225
+P 8250 5050
+F 0 "#PWR012" H 8250 4900 50  0001 C CNN
+F 1 "+5V" H 8265 5223 50  0000 C CNN
+F 2 "" H 8250 5050 50  0001 C CNN
+F 3 "" H 8250 5050 50  0001 C CNN
+	1    8250 5050
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR013
 U 1 1 5E8275B7
-P 10475 6250
-F 0 "#PWR013" H 10475 6000 50  0001 C CNN
-F 1 "GND" H 10480 6077 50  0000 C CNN
-F 2 "" H 10475 6250 50  0001 C CNN
-F 3 "" H 10475 6250 50  0001 C CNN
-	1    10475 6250
+P 8250 6075
+F 0 "#PWR013" H 8250 5825 50  0001 C CNN
+F 1 "GND" H 8255 5902 50  0000 C CNN
+F 2 "" H 8250 6075 50  0001 C CNN
+F 3 "" H 8250 6075 50  0001 C CNN
+	1    8250 6075
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:AVR-ISP-10 J1
 U 1 1 5E855F65
-P 10575 5775
-F 0 "J1" H 10295 5871 50  0000 R CNN
-F 1 "AVR-ISP-10" H 10295 5780 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical" V 10325 5825 50  0001 C CNN
-F 3 " ~" H 9300 5225 50  0001 C CNN
-	1    10575 5775
+P 8350 5600
+F 0 "J1" H 8070 5696 50  0000 R CNN
+F 1 "AVR-ISP-10" H 8070 5605 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical" V 8100 5650 50  0001 C CNN
+F 3 " ~" H 7075 5050 50  0001 C CNN
+	1    8350 5600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10475 6250 10475 6175
+	8250 6075 8250 6000
 Wire Wire Line
-	10475 5225 10475 5275
+	8250 5050 8250 5100
 Text Label 2600 4575 0    50   ~ 0
 MOSI
 Text Label 2800 5775 0    50   ~ 0
@@ -546,7 +537,7 @@ Wire Wire Line
 	3975 1150 3975 1250
 Connection ~ 3975 1250
 $Sheet
-S 4850 6900 700  525 
+S 4650 6100 700  525 
 U 5E8D69C1
 F0 "Power" 50
 F1 "power.sch" 50
@@ -557,31 +548,94 @@ Text Label 2600 6175 0    50   ~ 0
 LCD_RW
 Text Label 2600 6075 0    50   ~ 0
 LCD_EN
-Text Label 2600 6675 0    50   ~ 0
+Text Label 2600 6475 0    50   ~ 0
 LCD_DB7
 Text Label 2600 6575 0    50   ~ 0
 LCD_DB6
-Text Label 2600 6475 0    50   ~ 0
+Text Label 2600 6675 0    50   ~ 0
 LCD_DB5
 Text Label 2600 6375 0    50   ~ 0
 LCD_DB4
-NoConn ~ 2600 5275
 $Sheet
-S 3825 6800 675  525 
+S 5200 4125 1025 200 
 U 5E789C0B
 F0 "Temperature Control" 50
 F1 "tempctl.sch" 50
+F2 "TEMP_1" I L 5200 4250 50 
+F3 "TEMP_0" I L 5200 4175 50 
+F4 "FAN_RPM" I R 6225 4175 50 
+F5 "FAN_PWM" I R 6225 4250 50 
 $EndSheet
 $Sheet
-S 5725 6425 1050 1000
+S 5300 5000 875  575 
 U 5E7EC7EF
 F0 "UI" 50
 F1 "ui.sch" 50
+F2 "LCD_RS" I L 5300 5050 50 
+F3 "LCD_RW" I L 5300 5125 50 
+F4 "LCD_EN" I L 5300 5200 50 
+F5 "LCD_DB4" I L 5300 5275 50 
+F6 "LCD_DB5" I L 5300 5350 50 
+F7 "LCD_DB6" I L 5300 5425 50 
+F8 "LCD_DB7" I L 5300 5500 50 
+F9 "ROT_SW" I R 6175 5050 50 
+F10 "ROT_A" I R 6175 5125 50 
+F11 "ROT_B" I R 6175 5200 50 
 $EndSheet
 $Sheet
-S 6850 1950 1675 1625
+S 6850 1950 1075 275 
 U 5E82E2D2
 F0 "Current Measurements" 50
 F1 "current.sch" 50
+F2 "V_MEAS" I R 7925 2025 50 
+F3 "CUR_MEAS" I L 6850 2025 50 
+F4 "CUR_SET" I L 6850 2125 50 
+F5 "RELAY_EN" I R 7925 2125 50 
 $EndSheet
+Text Label 5300 5050 2    50   ~ 0
+LCD_RS
+Text Label 5300 5125 2    50   ~ 0
+LCD_RW
+Text Label 5300 5200 2    50   ~ 0
+LCD_EN
+Text Label 5300 5500 2    50   ~ 0
+LCD_DB7
+Text Label 5300 5425 2    50   ~ 0
+LCD_DB6
+Text Label 5300 5350 2    50   ~ 0
+LCD_DB5
+Text Label 5300 5275 2    50   ~ 0
+LCD_DB4
+Text Label 5200 4250 2    50   ~ 0
+TEMP_1
+Text Label 5200 4175 2    50   ~ 0
+TEMP_0
+Text Label 6225 4250 0    50   ~ 0
+FAN_PWM
+Text Label 6225 4175 0    50   ~ 0
+FAN_RPM
+Text Label 7925 2125 0    50   ~ 0
+RELAY_EN
+Text Label 6850 2025 2    50   ~ 0
+CUR_MEAS
+Text Label 6850 2125 2    50   ~ 0
+CUR_SET
+Text Label 2600 5275 0    50   ~ 0
+V_MEAS
+Text Label 7925 2025 0    50   ~ 0
+V_MEAS
+Text Label 6175 5050 0    50   ~ 0
+ROT_SW
+Text Label 6175 5125 0    50   ~ 0
+ROT_A
+Text Label 6175 5200 0    50   ~ 0
+ROT_B
+Text Label 2600 5975 0    50   ~ 0
+ROT_SW
+Text Label 2600 4875 0    50   ~ 0
+ROT_A
+Text Label 2600 4975 0    50   ~ 0
+ROT_B
+Text Notes 3050 6525 0    50   ~ 0
+OBS
 $EndSCHEMATC
