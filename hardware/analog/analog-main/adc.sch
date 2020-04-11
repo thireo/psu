@@ -1,0 +1,405 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L athir:MCP33131D U11
+U 1 1 5E86FAAD
+P 5300 3875
+F 0 "U11" H 5100 3675 50  0000 C CNN
+F 1 "MCP3301" H 5475 3625 50  0000 C CNN
+F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 6100 3775 50  0001 C CNN
+F 3 "https://docs.rs-online.com/c20b/0900766b81651e60.pdf" H 6100 3775 50  0001 C CNN
+	1    5300 3875
+	1    0    0    -1  
+$EndComp
+Text Notes 5425 4300 0    50   ~ 0
+MCP33131
+$Comp
+L Reference_Voltage:MCP1525-TT U?
+U 1 1 5E9EC9C4
+P 2600 1925
+AR Path="/5E9EC9C4" Ref="U?"  Part="1" 
+AR Path="/5E862B85/5E9EC9C4" Ref="U?"  Part="1" 
+AR Path="/5E86D055/5E9EC9C4" Ref="U?"  Part="1" 
+AR Path="/5E86F885/5E9EC9C4" Ref="U10"  Part="1" 
+F 0 "U10" H 2470 1971 50  0000 R CNN
+F 1 "MCP1525-TT" H 2470 1880 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2625 1675 50  0001 L CIN
+F 3 "http://ww1.microchip.com/downloads/en/devicedoc/21653b.pdf" H 2600 1925 50  0001 C CIN
+	1    2600 1925
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5E9EC9D2
+P 3200 2075
+AR Path="/5E86D055/5E9EC9D2" Ref="C?"  Part="1" 
+AR Path="/5E86F885/5E9EC9D2" Ref="C18"  Part="1" 
+F 0 "C18" H 3292 2121 50  0000 L CNN
+F 1 "100n" H 3292 2030 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3200 2075 50  0001 C CNN
+F 3 "~" H 3200 2075 50  0001 C CNN
+	1    3200 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 1975 3200 1925
+Connection ~ 3200 1925
+Wire Wire Line
+	3200 1925 3000 1925
+Wire Wire Line
+	3200 2175 3200 2300
+Wire Wire Line
+	3200 2300 2600 2300
+Wire Wire Line
+	2600 2300 2600 2225
+$Comp
+L power:GND #PWR?
+U 1 1 5E9EC9DE
+P 2600 2375
+AR Path="/5E86D055/5E9EC9DE" Ref="#PWR?"  Part="1" 
+AR Path="/5E86F885/5E9EC9DE" Ref="#PWR030"  Part="1" 
+F 0 "#PWR030" H 2600 2125 50  0001 C CNN
+F 1 "GND" H 2605 2202 50  0000 C CNN
+F 2 "" H 2600 2375 50  0001 C CNN
+F 3 "" H 2600 2375 50  0001 C CNN
+	1    2600 2375
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 2375 2600 2300
+Connection ~ 2600 2300
+$Comp
+L Device:C_Small C?
+U 1 1 5E9EC9E6
+P 2225 1700
+AR Path="/5E86D055/5E9EC9E6" Ref="C?"  Part="1" 
+AR Path="/5E86F885/5E9EC9E6" Ref="C17"  Part="1" 
+F 0 "C17" H 2317 1746 50  0000 L CNN
+F 1 "100n" H 2317 1655 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2225 1700 50  0001 C CNN
+F 3 "~" H 2225 1700 50  0001 C CNN
+	1    2225 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 1625 2600 1500
+Wire Wire Line
+	2600 1500 2225 1500
+Wire Wire Line
+	2225 1500 2225 1600
+Wire Wire Line
+	2225 1800 2225 2300
+Wire Wire Line
+	2225 2300 2600 2300
+$Comp
+L power:+5V #PWR?
+U 1 1 5E9EC9F1
+P 2600 1425
+AR Path="/5E86D055/5E9EC9F1" Ref="#PWR?"  Part="1" 
+AR Path="/5E86F885/5E9EC9F1" Ref="#PWR029"  Part="1" 
+F 0 "#PWR029" H 2600 1275 50  0001 C CNN
+F 1 "+5V" H 2615 1598 50  0000 C CNN
+F 2 "" H 2600 1425 50  0001 C CNN
+F 3 "" H 2600 1425 50  0001 C CNN
+	1    2600 1425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 1425 2600 1500
+Connection ~ 2600 1500
+$Comp
+L power:+1V8 #PWR032
+U 1 1 5E9F7E26
+P 5300 2800
+F 0 "#PWR032" H 5300 2650 50  0001 C CNN
+F 1 "+1V8" H 5315 2973 50  0000 C CNN
+F 2 "" H 5300 2800 50  0001 C CNN
+F 3 "" H 5300 2800 50  0001 C CNN
+	1    5300 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 2800 5300 3050
+Text HLabel 5850 3825 2    50   Input ~ 0
+SCK
+Wire Wire Line
+	5850 3825 5800 3825
+Text HLabel 5850 3625 2    50   Output ~ 0
+MISO
+Text HLabel 5850 4025 2    50   Input ~ 0
+CNVST_0
+$Comp
+L power:GND #PWR031
+U 1 1 5E9F9C9D
+P 5200 4400
+F 0 "#PWR031" H 5200 4150 50  0001 C CNN
+F 1 "GND" H 5205 4227 50  0000 C CNN
+F 2 "" H 5200 4400 50  0001 C CNN
+F 3 "" H 5200 4400 50  0001 C CNN
+	1    5200 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4400 5200 4325
+Wire Wire Line
+	5850 3625 5800 3625
+Wire Wire Line
+	5850 4025 5800 4025
+Text HLabel 5850 3725 2    50   Input ~ 0
+MOSI
+Wire Wire Line
+	5850 3725 5800 3725
+Text HLabel 4600 3775 0    50   Input ~ 0
+AIN0+
+Wire Wire Line
+	4600 3775 4700 3775
+$Comp
+L power:+3V3 #PWR033
+U 1 1 5EA03387
+P 5400 2975
+F 0 "#PWR033" H 5400 2825 50  0001 C CNN
+F 1 "+3V3" H 5415 3148 50  0000 C CNN
+F 2 "" H 5400 2975 50  0001 C CNN
+F 3 "" H 5400 2975 50  0001 C CNN
+	1    5400 2975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 2975 5400 3000
+$Comp
+L Device:C_Small C?
+U 1 1 5EA03D6F
+P 5625 3175
+AR Path="/5E86D055/5EA03D6F" Ref="C?"  Part="1" 
+AR Path="/5E86F885/5EA03D6F" Ref="C19"  Part="1" 
+F 0 "C19" H 5717 3221 50  0000 L CNN
+F 1 "100n" H 5717 3130 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5625 3175 50  0001 C CNN
+F 3 "~" H 5625 3175 50  0001 C CNN
+	1    5625 3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 3050 5625 3050
+Wire Wire Line
+	5625 3050 5625 3075
+Connection ~ 5300 3050
+Wire Wire Line
+	5300 3050 5300 3475
+$Comp
+L Device:C_Small C?
+U 1 1 5EA0699E
+P 5925 3175
+AR Path="/5E86D055/5EA0699E" Ref="C?"  Part="1" 
+AR Path="/5E86F885/5EA0699E" Ref="C20"  Part="1" 
+F 0 "C20" H 6017 3221 50  0000 L CNN
+F 1 "100n" H 6017 3130 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5925 3175 50  0001 C CNN
+F 3 "~" H 5925 3175 50  0001 C CNN
+	1    5925 3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 3000 5925 3000
+Wire Wire Line
+	5925 3000 5925 3075
+Connection ~ 5400 3000
+Wire Wire Line
+	5400 3000 5400 3475
+$Comp
+L power:GND #PWR034
+U 1 1 5EA07305
+P 5775 3350
+F 0 "#PWR034" H 5775 3100 50  0001 C CNN
+F 1 "GND" H 5780 3177 50  0000 C CNN
+F 2 "" H 5775 3350 50  0001 C CNN
+F 3 "" H 5775 3350 50  0001 C CNN
+	1    5775 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5775 3350 5775 3325
+Wire Wire Line
+	5775 3325 5925 3325
+Wire Wire Line
+	5925 3325 5925 3275
+Wire Wire Line
+	5775 3325 5625 3325
+Wire Wire Line
+	5625 3325 5625 3275
+Connection ~ 5775 3325
+Wire Wire Line
+	5200 1925 5200 3475
+Wire Wire Line
+	3200 1925 5200 1925
+$Comp
+L athir:MCP33131D U12
+U 1 1 5EA10FC7
+P 8000 3875
+F 0 "U12" H 7800 3675 50  0000 C CNN
+F 1 "MCP3301" H 8175 3625 50  0000 C CNN
+F 2 "Package_SO:MSOP-10_3x3mm_P0.5mm" H 8800 3775 50  0001 C CNN
+F 3 "https://docs.rs-online.com/c20b/0900766b81651e60.pdf" H 8800 3775 50  0001 C CNN
+	1    8000 3875
+	1    0    0    -1  
+$EndComp
+Text Notes 8125 4300 0    50   ~ 0
+MCP33131
+$Comp
+L power:+1V8 #PWR036
+U 1 1 5EA10FD2
+P 8000 2800
+F 0 "#PWR036" H 8000 2650 50  0001 C CNN
+F 1 "+1V8" H 8015 2973 50  0000 C CNN
+F 2 "" H 8000 2800 50  0001 C CNN
+F 3 "" H 8000 2800 50  0001 C CNN
+	1    8000 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 2800 8000 3050
+Text HLabel 8550 3825 2    50   Input ~ 0
+SCK
+Wire Wire Line
+	8550 3825 8500 3825
+Text HLabel 8550 3625 2    50   Output ~ 0
+MISO
+Text HLabel 8550 4025 2    50   Input ~ 0
+CNVST_1
+$Comp
+L power:GND #PWR035
+U 1 1 5EA10FE1
+P 7900 4400
+F 0 "#PWR035" H 7900 4150 50  0001 C CNN
+F 1 "GND" H 7905 4227 50  0000 C CNN
+F 2 "" H 7900 4400 50  0001 C CNN
+F 3 "" H 7900 4400 50  0001 C CNN
+	1    7900 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 4400 7900 4325
+Wire Wire Line
+	8550 3625 8500 3625
+Wire Wire Line
+	8550 4025 8500 4025
+Text HLabel 8550 3725 2    50   Input ~ 0
+MOSI
+Wire Wire Line
+	8550 3725 8500 3725
+Text HLabel 7300 3775 0    50   Input ~ 0
+AIN1+
+Wire Wire Line
+	7300 3775 7400 3775
+$Comp
+L power:+3V3 #PWR037
+U 1 1 5EA10FF4
+P 8100 2975
+F 0 "#PWR037" H 8100 2825 50  0001 C CNN
+F 1 "+3V3" H 8115 3148 50  0000 C CNN
+F 2 "" H 8100 2975 50  0001 C CNN
+F 3 "" H 8100 2975 50  0001 C CNN
+	1    8100 2975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 2975 8100 3000
+$Comp
+L Device:C_Small C?
+U 1 1 5EA10FFF
+P 8325 3175
+AR Path="/5E86D055/5EA10FFF" Ref="C?"  Part="1" 
+AR Path="/5E86F885/5EA10FFF" Ref="C21"  Part="1" 
+F 0 "C21" H 8417 3221 50  0000 L CNN
+F 1 "100n" H 8417 3130 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8325 3175 50  0001 C CNN
+F 3 "~" H 8325 3175 50  0001 C CNN
+	1    8325 3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 3050 8325 3050
+Wire Wire Line
+	8325 3050 8325 3075
+Connection ~ 8000 3050
+Wire Wire Line
+	8000 3050 8000 3475
+$Comp
+L Device:C_Small C?
+U 1 1 5EA1100D
+P 8625 3175
+AR Path="/5E86D055/5EA1100D" Ref="C?"  Part="1" 
+AR Path="/5E86F885/5EA1100D" Ref="C22"  Part="1" 
+F 0 "C22" H 8717 3221 50  0000 L CNN
+F 1 "100n" H 8717 3130 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8625 3175 50  0001 C CNN
+F 3 "~" H 8625 3175 50  0001 C CNN
+	1    8625 3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 3000 8625 3000
+Wire Wire Line
+	8625 3000 8625 3075
+Connection ~ 8100 3000
+Wire Wire Line
+	8100 3000 8100 3475
+$Comp
+L power:GND #PWR038
+U 1 1 5EA1101B
+P 8475 3350
+F 0 "#PWR038" H 8475 3100 50  0001 C CNN
+F 1 "GND" H 8480 3177 50  0000 C CNN
+F 2 "" H 8475 3350 50  0001 C CNN
+F 3 "" H 8475 3350 50  0001 C CNN
+	1    8475 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8475 3350 8475 3325
+Wire Wire Line
+	8475 3325 8625 3325
+Wire Wire Line
+	8625 3325 8625 3275
+Wire Wire Line
+	8475 3325 8325 3325
+Wire Wire Line
+	8325 3325 8325 3275
+Connection ~ 8475 3325
+Wire Wire Line
+	7900 1925 7900 3475
+Wire Wire Line
+	5200 1925 7900 1925
+Connection ~ 5200 1925
+Wire Wire Line
+	7350 3975 7350 4325
+Wire Wire Line
+	7350 4325 7900 4325
+Wire Wire Line
+	7350 3975 7400 3975
+Connection ~ 7900 4325
+Wire Wire Line
+	7900 4325 7900 4275
+Wire Wire Line
+	4625 3975 4625 4325
+Wire Wire Line
+	4625 4325 5200 4325
+Wire Wire Line
+	4625 3975 4700 3975
+Connection ~ 5200 4325
+Wire Wire Line
+	5200 4325 5200 4275
+$EndSCHEMATC
