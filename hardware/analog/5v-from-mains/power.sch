@@ -27,22 +27,18 @@ U 1 1 5E8304E0
 P 9425 4800
 F 0 "J1" H 9431 5225 50  0000 C CNN
 F 1 "Conn_WallSocket_Earth" H 10100 4900 50  0000 C CNN
-F 2 "athir:230VAC_PLUG" H 9125 4900 50  0001 C CNN
+F 2 "athir:Molex-KK-396-5277" H 9125 4900 50  0001 C CNN
 F 3 "" H 9125 4900 50  0001 C CNN
 	1    9425 4800
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	5100 4475 4700 4475
-Wire Wire Line
-	5100 4275 5100 4475
-Wire Wire Line
-	8550 4950 9050 4950
+	8550 4950 8875 4950
 Connection ~ 8550 4950
 Wire Wire Line
 	8550 4900 8550 4950
 Wire Wire Line
-	9050 4625 8550 4625
+	9050 4625 8875 4625
 Connection ~ 8550 4625
 Wire Wire Line
 	8550 4700 8550 4625
@@ -184,7 +180,7 @@ U 1 1 5E8841FF
 P 3275 4600
 F 0 "F1" V 3078 4600 50  0000 C CNN
 F 1 "500mA" V 3169 4600 50  0000 C CNN
-F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open" V 3205 4600 50  0001 C CNN
+F 2 "athir:KK-Fuseholder" V 3205 4600 50  0001 C CNN
 F 3 "~" H 3275 4600 50  0001 C CNN
 	1    3275 4600
 	0    1    1    0   
@@ -210,10 +206,6 @@ Wire Wire Line
 Wire Wire Line
 	4025 4875 4025 4775
 Wire Wire Line
-	4300 4875 4025 4875
-Wire Wire Line
-	4025 4475 4300 4475
-Wire Wire Line
 	4025 4575 4025 4475
 $Comp
 L Connector:Conn_WallSocket J2
@@ -221,7 +213,7 @@ U 1 1 5E7CCC19
 P 2775 4700
 F 0 "J2" H 2781 5125 50  0000 C CNN
 F 1 "Conn_WallSocket_Earth" H 3450 4800 50  0000 C CNN
-F 2 "athir:230VAC_PLUG" H 2475 4800 50  0001 C CNN
+F 2 "athir:Molex-KK-396-5277" H 2475 4800 50  0001 C CNN
 F 3 "" H 2475 4800 50  0001 C CNN
 	1    2775 4700
 	-1   0    0    -1  
@@ -409,24 +401,7 @@ Connection ~ 7400 4625
 Wire Wire Line
 	7400 4625 7225 4625
 Wire Wire Line
-	5100 4275 6050 4275
-Wire Wire Line
-	5100 5075 6050 5075
-Wire Wire Line
-	5100 5075 5100 4875
-Wire Wire Line
-	5100 4875 4700 4875
-$Comp
-L athir:Transformer-230vac-9vac-1va TR1
-U 1 1 5E860CD2
-P 4500 4675
-F 0 "TR1" H 4500 5100 50  0000 C CNN
-F 1 "Transformer-230vac-9vac-1va" H 4500 5009 50  0000 C CNN
-F 2 "Transformer_THT:Transformer_Breve_TEZ-44x52" H 4500 4675 50  0001 C CNN
-F 3 "" H 4500 4675 50  0001 C CNN
-	1    4500 4675
-	1    0    0    -1  
-$EndComp
+	5075 4275 6050 4275
 $Comp
 L Device:CP_Small C?
 U 1 1 5E94376D
@@ -453,4 +428,69 @@ F 3 "~" H 6950 4775 50  0001 C CNN
 	1    6950 4775
 	1    0    0    -1  
 $EndComp
+$Comp
+L Mechanical:Heatsink HS1
+U 1 1 5E968A90
+P 7875 4250
+F 0 "HS1" H 8017 4371 50  0000 L CNN
+F 1 "Heatsink" H 8017 4280 50  0000 L CNN
+F 2 "athir:Heatsink_Fischer_SK104-STC-STIC_35x13mm_2xDrill2.5mm" H 7887 4250 50  0001 C CNN
+F 3 "~" H 7887 4250 50  0001 C CNN
+	1    7875 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP_Small C?
+U 1 1 5E96F498
+P 8875 4800
+AR Path="/5E96F498" Ref="C?"  Part="1" 
+AR Path="/5E8D69C1/5E96F498" Ref="C1"  Part="1" 
+F 0 "C1" H 8700 4875 50  0000 L CNN
+F 1 "10u" H 8650 4750 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 8875 4800 50  0001 C CNN
+F 3 "~" H 8875 4800 50  0001 C CNN
+	1    8875 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8875 4700 8875 4625
+Connection ~ 8875 4625
+Wire Wire Line
+	8875 4625 8550 4625
+Connection ~ 8875 4950
+Wire Wire Line
+	8875 4950 9050 4950
+Wire Wire Line
+	8875 4900 8875 4950
+$Comp
+L athir:Transformer_1P_2S TR1
+U 1 1 5E98CD1A
+P 4525 4675
+F 0 "TR1" H 4525 5256 50  0000 C CNN
+F 1 "Transformer_1P_2S" H 4525 5165 50  0000 C CNN
+F 2 "Transformer_THT:Transformer_Breve_TEZ-44x52" H 4525 4675 50  0001 C CNN
+F 3 "~" H 4525 4675 50  0001 C CNN
+	1    4525 4675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4125 4475 4025 4475
+Wire Wire Line
+	4025 4875 4125 4875
+Wire Wire Line
+	4925 4775 5075 4775
+Wire Wire Line
+	5075 4275 5075 4775
+Wire Wire Line
+	5075 4275 4925 4275
+Connection ~ 5075 4275
+Wire Wire Line
+	4925 4575 5175 4575
+Wire Wire Line
+	5175 4575 5175 5075
+Connection ~ 5175 5075
+Wire Wire Line
+	5175 5075 6050 5075
+Wire Wire Line
+	4925 5075 5175 5075
 $EndSCHEMATC
