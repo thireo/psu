@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:electro-load-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -1041,4 +1042,10 @@ Text Label 2600 5175 0    50   ~ 0
 ADC_0_ALERT
 NoConn ~ 2600 5375
 NoConn ~ 2600 5475
+$Sheet
+S 5850 6075 950  950 
+U 5E9F0954
+F0 "Power External" 50
+F1 "pwr.sch" 50
+$EndSheet
 $EndSCHEMATC

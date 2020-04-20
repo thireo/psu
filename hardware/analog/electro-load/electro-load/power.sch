@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:electro-load-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 2 6
 Title ""
 Date ""
 Rev ""
@@ -77,7 +78,7 @@ Wire Wire Line
 	3050 2825 3050 2775
 $Comp
 L Connector:Jack-DC J2
-U 1 1 5E7CCC19
+U 1 1 5E9F8E01
 P 2675 4700
 F 0 "J2" H 2681 5125 50  0000 C CNN
 F 1 "Conn_WallSocket_Earth" H 3350 4800 50  0000 C CNN
