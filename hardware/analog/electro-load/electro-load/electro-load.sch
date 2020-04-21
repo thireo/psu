@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:electro-load-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 1 5
 Title ""
 Date ""
 Rev ""
@@ -531,12 +530,6 @@ $EndComp
 Wire Wire Line
 	3975 1150 3975 1250
 Connection ~ 3975 1250
-$Sheet
-S 4650 6100 700  525 
-U 5E8D69C1
-F0 "Power" 50
-F1 "power.sch" 50
-$EndSheet
 Text Label 2600 6275 0    50   ~ 0
 LCD_RS
 Text Label 2600 6175 0    50   ~ 0
