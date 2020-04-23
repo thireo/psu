@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 2 5
 Title ""
 Date ""
 Rev ""
@@ -218,19 +218,6 @@ Wire Wire Line
 	5325 5100 5325 4575
 Wire Wire Line
 	5325 4575 5250 4575
-$Comp
-L Device:R_Small R?
-U 1 1 5EE90B7A
-P 5500 4575
-AR Path="/5EE90B7A" Ref="R?"  Part="1" 
-AR Path="/5E789C0B/5EE90B7A" Ref="R13"  Part="1" 
-F 0 "R13" V 5304 4575 50  0000 C CNN
-F 1 "1k" V 5395 4575 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 5500 4575 50  0001 C CNN
-F 3 "~" H 5500 4575 50  0001 C CNN
-	1    5500 4575
-	0    1    -1   0   
-$EndComp
 Wire Wire Line
 	5400 4575 5325 4575
 Connection ~ 5325 4575
@@ -288,8 +275,6 @@ Wire Wire Line
 	4575 3750 4575 4475
 Wire Wire Line
 	4575 4475 4650 4475
-Wire Wire Line
-	5675 4575 5600 4575
 $Comp
 L Device:C_Small C9
 U 1 1 5EEBC268
@@ -821,4 +806,19 @@ Wire Wire Line
 Connection ~ 4850 4900
 Wire Wire Line
 	4850 4900 4850 4875
+Wire Wire Line
+	5675 4575 5600 4575
+$Comp
+L Device:R_Small R?
+U 1 1 5EE90B7A
+P 5500 4575
+AR Path="/5EE90B7A" Ref="R?"  Part="1" 
+AR Path="/5E789C0B/5EE90B7A" Ref="R13"  Part="1" 
+F 0 "R13" V 5304 4575 50  0000 C CNN
+F 1 "1k" V 5395 4575 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5500 4575 50  0001 C CNN
+F 3 "~" H 5500 4575 50  0001 C CNN
+	1    5500 4575
+	0    1    -1   0   
+$EndComp
 $EndSCHEMATC

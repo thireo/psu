@@ -1,4 +1,4 @@
-update=16-04-2020 21:39:46
+update=23-04-2020 21:07:22
 version=1
 last_client=kicad
 [general]
@@ -234,6 +234,28 @@ Enabled=0
 Name=Default
 Clearance=0.2
 TrackWidth=0.25
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/1]
+Name=HV
+Clearance=2.5
+TrackWidth=2.5
+ViaDiameter=0.8
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/2]
+Name=High Current
+Clearance=0.3
+TrackWidth=10
 ViaDiameter=0.8
 ViaDrill=0.4
 uViaDiameter=0.3

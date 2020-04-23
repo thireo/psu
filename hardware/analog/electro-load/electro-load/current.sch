@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 5
+Sheet 4 5
 Title ""
 Date ""
 Rev ""
@@ -52,7 +52,7 @@ F 3 "~" H 2950 4025 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1375 2150 1675 2150
+	1375 2150 1550 2150
 NoConn ~ 1950 2050
 $Comp
 L Connector:Barrel_Jack J?
@@ -363,14 +363,14 @@ F 3 "" H 4700 3200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:LMV324 U6
-U 3 1 5ED474FC
+L Amplifier_Operational:LMV324 U3
+U 4 1 5ED474FC
 P 4900 6250
-F 0 "U6" H 4900 6617 50  0000 C CNN
+F 0 "U3" H 4900 6617 50  0000 C CNN
 F 1 "LMV324" H 4900 6526 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4850 6350 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 4950 6450 50  0001 C CNN
-	3    4900 6250
+	4    4900 6250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -417,19 +417,6 @@ F 3 "~" H 4700 2700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4500 2700 4625 2700
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5ED9DFFE
-P 3125 3750
-AR Path="/5ED9DFFE" Ref="TP?"  Part="1" 
-AR Path="/5E82E2D2/5ED9DFFE" Ref="TP8"  Part="1" 
-F 0 "TP8" H 3183 3868 50  0000 L CNN
-F 1 "TestPoint" H 2725 3875 50  0000 L CNN
-F 2 "athir:testpoint_probe" H 3325 3750 50  0001 C CNN
-F 3 "~" H 3325 3750 50  0001 C CNN
-	1    3125 3750
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:TestPoint TP?
 U 1 1 5EDAE3E0
@@ -700,10 +687,6 @@ Wire Wire Line
 Wire Wire Line
 	2675 6225 2550 6225
 Wire Wire Line
-	3125 3750 3125 3775
-Wire Wire Line
-	3125 3775 2950 3775
-Wire Wire Line
 	2950 4800 3675 4800
 Wire Wire Line
 	3675 4800 3675 3450
@@ -712,23 +695,6 @@ Wire Wire Line
 Connection ~ 2950 2775
 Wire Wire Line
 	2950 2775 2950 3000
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5EB3C700
-P 3125 6400
-AR Path="/5EB3C700" Ref="TP?"  Part="1" 
-AR Path="/5E82E2D2/5EB3C700" Ref="TP9"  Part="1" 
-F 0 "TP9" H 3183 6518 50  0000 L CNN
-F 1 "TestPoint" H 2725 6525 50  0000 L CNN
-F 2 "athir:testpoint_probe" H 3325 6400 50  0001 C CNN
-F 3 "~" H 3325 6400 50  0001 C CNN
-	1    3125 6400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3125 6400 3125 6425
-Wire Wire Line
-	3125 6425 2950 6425
 Wire Wire Line
 	2950 2375 4475 2375
 Connection ~ 2950 2375
@@ -837,9 +803,6 @@ Wire Wire Line
 NoConn ~ 5025 4375
 Text HLabel 5600 3875 2    50   Input ~ 0
 CUR_MEAS_0
-Connection ~ 3125 3775
-Wire Wire Line
-	3125 3775 4250 3775
 Wire Wire Line
 	2950 6150 4250 6150
 Connection ~ 2950 6150
@@ -982,23 +945,6 @@ Wire Wire Line
 	7825 6000 7825 5050
 Wire Wire Line
 	7825 5050 7700 5050
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5EC32B23
-P 8275 5225
-AR Path="/5EC32B23" Ref="TP?"  Part="1" 
-AR Path="/5E82E2D2/5EC32B23" Ref="TP14"  Part="1" 
-F 0 "TP14" H 8333 5343 50  0000 L CNN
-F 1 "TestPoint" H 7875 5350 50  0000 L CNN
-F 2 "athir:testpoint_probe" H 8475 5225 50  0001 C CNN
-F 3 "~" H 8475 5225 50  0001 C CNN
-	1    8275 5225
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8275 5225 8275 5250
-Wire Wire Line
-	8275 5250 8100 5250
 Wire Wire Line
 	8100 4975 9400 4975
 Connection ~ 8100 4975
@@ -1260,17 +1206,6 @@ F 3 "" H 8375 2575 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8375 2575 8375 2500
-$Comp
-L Amplifier_Operational:LMV324 U5
-U 2 1 5E9BC375
-P 9700 3775
-F 0 "U5" H 9700 4142 50  0000 C CNN
-F 1 "LMV324" H 9700 4051 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 9650 3875 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 9750 3975 50  0001 C CNN
-	2    9700 3775
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10000 3775 10075 3775
 Wire Wire Line
@@ -1350,23 +1285,6 @@ Wire Wire Line
 Connection ~ 9300 3675
 Wire Wire Line
 	9300 3675 9400 3675
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5E9BC3B9
-P 8550 2075
-AR Path="/5E9BC3B9" Ref="TP?"  Part="1" 
-AR Path="/5E82E2D2/5E9BC3B9" Ref="TP15"  Part="1" 
-F 0 "TP15" H 8608 2193 50  0000 L CNN
-F 1 "TestPoint" H 8150 2200 50  0000 L CNN
-F 2 "athir:testpoint_probe" H 8750 2075 50  0001 C CNN
-F 3 "~" H 8750 2075 50  0001 C CNN
-	1    8550 2075
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8550 2075 8550 2100
-Wire Wire Line
-	8550 2100 8375 2100
 Connection ~ 8375 1825
 Wire Wire Line
 	8375 1825 8375 1725
@@ -1439,14 +1357,14 @@ Connection ~ 10325 1925
 Wire Wire Line
 	10575 1925 10650 1925
 $Comp
-L Amplifier_Operational:LMV324 U5
-U 4 1 5E9BC3FC
+L Amplifier_Operational:LMV324 U6
+U 3 1 5E9BC3FC
 P 9950 1925
-F 0 "U5" H 9950 2292 50  0000 C CNN
+F 0 "U6" H 9950 2292 50  0000 C CNN
 F 1 "LMV324" H 9950 2201 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 9900 2025 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 10000 2125 50  0001 C CNN
-	4    9950 1925
+	3    9950 1925
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1529,21 +1447,21 @@ F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 7450 5350 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:LMV324 U7
-U 1 1 5E9BC359
+L Amplifier_Operational:LMV324 U6
+U 2 1 5E9BC359
 P 7675 2000
-F 0 "U7" H 7675 2367 50  0000 C CNN
+F 0 "U6" H 7675 2367 50  0000 C CNN
 F 1 "LMV324" H 7675 2276 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 7625 2100 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 7725 2200 50  0001 C CNN
-	1    7675 2000
+	2    7675 2000
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:LMV324 U5
+L Amplifier_Operational:LMV324 U3
 U 3 1 5EA3DD42
 P 2250 6325
-F 0 "U5" H 2250 6692 50  0000 C CNN
+F 0 "U3" H 2250 6692 50  0000 C CNN
 F 1 "LMV324" H 2250 6601 50  0000 C CNN
 F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 2200 6425 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 2300 6525 50  0001 C CNN
@@ -1562,4 +1480,42 @@ Wire Wire Line
 	8375 1075 6325 1075
 Text Label 3850 2150 0    50   ~ 0
 LOAD_CURRENT
+$Comp
+L Amplifier_Operational:LMV324 U5
+U 2 1 5E9BC375
+P 9700 3775
+F 0 "U5" H 9700 4142 50  0000 C CNN
+F 1 "LMV324" H 9700 4051 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 9650 3875 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 9750 3975 50  0001 C CNN
+	2    9700 3775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 3775 4250 3775
+$Comp
+L Connector:Barrel_Jack J?
+U 1 1 5EBBF432
+P 1050 1825
+AR Path="/5EBBF432" Ref="J?"  Part="1" 
+AR Path="/5E82E2D2/5EBBF432" Ref="J4"  Part="1" 
+F 0 "J4" H 820 1783 50  0000 R CNN
+F 1 "INPUT" H 820 1874 50  0000 R CNN
+F 2 "TestPoint:TestPoint_2Pads_Pitch5.08mm_Drill1.3mm" H 1100 1785 50  0001 C CNN
+F 3 "~" H 1100 1785 50  0001 C CNN
+	1    1050 1825
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	1350 1925 1450 1925
+Wire Wire Line
+	1450 1925 1450 2350
+Connection ~ 1450 2350
+Wire Wire Line
+	1350 1725 1550 1725
+Wire Wire Line
+	1550 1725 1550 2150
+Connection ~ 1550 2150
+Wire Wire Line
+	1550 2150 1675 2150
 $EndSCHEMATC

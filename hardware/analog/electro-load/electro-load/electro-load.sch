@@ -516,20 +516,6 @@ F 3 "~" H 1300 4150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1100 4150 1100 4275
-$Comp
-L Connector:TestPoint TP3
-U 1 1 5E9DB920
-P 3975 1150
-F 0 "TP3" H 4033 1268 50  0000 L CNN
-F 1 "TestPoint" H 4033 1177 50  0000 L CNN
-F 2 "athir:testpoint_probe" H 4175 1150 50  0001 C CNN
-F 3 "~" H 4175 1150 50  0001 C CNN
-	1    3975 1150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3975 1150 3975 1250
-Connection ~ 3975 1250
 Text Label 2600 6275 0    50   ~ 0
 LCD_RS
 Text Label 2600 6175 0    50   ~ 0
@@ -549,8 +535,8 @@ S 6825 3550 1025 225
 U 5E789C0B
 F0 "Temperature Control" 50
 F1 "tempctl.sch" 50
-F2 "TEMP_1" I R 7850 3700 50 
-F3 "TEMP_0" I R 7850 3600 50 
+F2 "TEMP_1" I R 7850 3600 50 
+F3 "TEMP_0" I R 7850 3700 50 
 F4 "FAN_RPM" I L 6825 3600 50 
 F5 "FAN_PWM" I L 6825 3700 50 
 $EndSheet
@@ -634,10 +620,6 @@ Wire Wire Line
 	7925 2025 8425 2025
 Wire Wire Line
 	8425 2125 7925 2125
-Wire Wire Line
-	7925 2225 8425 2225
-Wire Wire Line
-	8425 2325 7925 2325
 $Comp
 L power:GND #PWR063
 U 1 1 5E9537DB
@@ -699,15 +681,7 @@ $EndComp
 Wire Wire Line
 	8800 4050 8800 4000
 Wire Wire Line
-	7925 2525 8250 2525
-Wire Wire Line
-	8250 2525 8250 3500
-Wire Wire Line
-	8250 3500 8400 3500
-Wire Wire Line
-	8400 3600 7850 3600
-Wire Wire Line
-	7850 3700 8400 3700
+	7925 2525 8375 2525
 $Comp
 L Device:C_Small C21
 U 1 1 5E999D00
@@ -987,8 +961,6 @@ Wire Wire Line
 Wire Wire Line
 	8050 3800 8050 4150
 Wire Wire Line
-	8050 4150 6950 4150
-Wire Wire Line
 	6275 4050 4775 4050
 Wire Wire Line
 	4775 4050 4775 3425
@@ -1022,7 +994,6 @@ Wire Wire Line
 Connection ~ 6475 4500
 Wire Wire Line
 	6475 4500 6950 4500
-Connection ~ 6950 4150
 Wire Wire Line
 	6950 4150 6875 4150
 Text Label 9200 3400 0    50   ~ 0
@@ -1041,4 +1012,46 @@ U 5E9F0954
 F0 "Power External" 50
 F1 "pwr.sch" 50
 $EndSheet
+$Comp
+L Device:R_Small R46
+U 1 1 5EAF425B
+P 7125 4150
+AR Path="/5EAF425B" Ref="R46"  Part="1" 
+AR Path="/5E789C0B/5EAF425B" Ref="R?"  Part="1" 
+F 0 "R46" V 6929 4150 50  0000 C CNN
+F 1 "1k" V 7020 4150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7125 4150 50  0001 C CNN
+F 3 "~" H 7125 4150 50  0001 C CNN
+	1    7125 4150
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	7025 4150 6950 4150
+Connection ~ 6950 4150
+Wire Wire Line
+	7225 4150 8050 4150
+Wire Wire Line
+	8125 2225 8425 2225
+Wire Wire Line
+	7925 2225 8025 2225
+Wire Wire Line
+	8375 2525 8375 2325
+Wire Wire Line
+	8375 2325 8425 2325
+Wire Wire Line
+	8025 2225 8025 3500
+Wire Wire Line
+	8025 3500 8400 3500
+Wire Wire Line
+	8400 3600 8275 3600
+Wire Wire Line
+	8275 3600 8275 2325
+Wire Wire Line
+	8275 2325 7925 2325
+Wire Wire Line
+	8125 2225 8125 3600
+Wire Wire Line
+	8125 3600 7850 3600
+Wire Wire Line
+	7850 3700 8400 3700
 $EndSCHEMATC
