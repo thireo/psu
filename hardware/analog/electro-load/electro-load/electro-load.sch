@@ -408,15 +408,15 @@ $EndComp
 Wire Wire Line
 	3100 6075 3100 6050
 $Comp
-L Switch:SW_Push SW1
+L Switch:SW_SPST SW1
 U 1 1 5E87E97B
 P 3450 5775
 F 0 "SW1" H 3450 5590 50  0000 C CNN
 F 1 "RESET" H 3450 5681 50  0000 C CNN
-F 2 "" H 3450 5975 50  0001 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm_H4.3mm" H 3450 5975 50  0001 C CNN
 F 3 "~" H 3450 5975 50  0001 C CNN
 	1    3450 5775
-	-1   0    0    1   
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3250 5775 3100 5775
@@ -506,16 +506,14 @@ Connection ~ 2100 3600
 $Comp
 L Connector:TestPoint TP1
 U 1 1 5E9A7122
-P 1100 4150
-F 0 "TP1" H 1158 4268 50  0000 L CNN
-F 1 "TestPoint" H 1158 4177 50  0000 L CNN
-F 2 "athir:testpoint_probe" H 1300 4150 50  0001 C CNN
-F 3 "~" H 1300 4150 50  0001 C CNN
-	1    1100 4150
+P 1050 3775
+F 0 "TP1" H 1108 3893 50  0000 L CNN
+F 1 "TestPoint" H 1108 3802 50  0000 L CNN
+F 2 "athir:testpoint_probe" H 1250 3775 50  0001 C CNN
+F 3 "~" H 1250 3775 50  0001 C CNN
+	1    1050 3775
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1100 4150 1100 4275
 Text Label 2600 6275 0    50   ~ 0
 LCD_RS
 Text Label 2600 6175 0    50   ~ 0
@@ -914,7 +912,7 @@ F 3 "~" H 5975 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5975 3400 5975 3325
+	5975 3400 5975 3350
 Connection ~ 5975 3325
 Wire Wire Line
 	5975 3600 5975 3750
@@ -973,27 +971,20 @@ Wire Wire Line
 $Comp
 L power:GND #PWR061
 U 1 1 5E9FF60A
-P 6475 4500
-F 0 "#PWR061" H 6475 4250 50  0001 C CNN
-F 1 "GND" H 6480 4327 50  0000 C CNN
-F 2 "" H 6475 4500 50  0001 C CNN
-F 3 "" H 6475 4500 50  0001 C CNN
-	1    6475 4500
+P 6475 4600
+F 0 "#PWR061" H 6475 4350 50  0001 C CNN
+F 1 "GND" H 6480 4427 50  0000 C CNN
+F 2 "" H 6475 4600 50  0001 C CNN
+F 3 "" H 6475 4600 50  0001 C CNN
+	1    6475 4600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6475 4500 6475 4450
 Wire Wire Line
 	6275 4250 6100 4250
 Wire Wire Line
 	6100 4250 6100 4500
 Wire Wire Line
-	6100 4500 6475 4500
-Wire Wire Line
 	6950 4500 6950 4150
-Connection ~ 6475 4500
-Wire Wire Line
-	6475 4500 6950 4500
 Wire Wire Line
 	6950 4150 6875 4150
 Text Label 9200 3400 0    50   ~ 0
@@ -1029,7 +1020,7 @@ Wire Wire Line
 	7025 4150 6950 4150
 Connection ~ 6950 4150
 Wire Wire Line
-	7225 4150 8050 4150
+	7225 4150 7400 4150
 Wire Wire Line
 	8125 2225 8425 2225
 Wire Wire Line
@@ -1054,4 +1045,55 @@ Wire Wire Line
 	8125 3600 7850 3600
 Wire Wire Line
 	7850 3700 8400 3700
+Wire Wire Line
+	6100 4500 6950 4500
+Wire Wire Line
+	6475 4450 6475 4600
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5EC5D453
+P 6150 3325
+F 0 "TP3" H 6208 3443 50  0000 L CNN
+F 1 "TestPoint" H 6208 3352 50  0000 L CNN
+F 2 "athir:testpoint_probe" H 6350 3325 50  0001 C CNN
+F 3 "~" H 6350 3325 50  0001 C CNN
+	1    6150 3325
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 3325 6150 3350
+Wire Wire Line
+	6150 3350 5975 3350
+Connection ~ 5975 3350
+Wire Wire Line
+	5975 3350 5975 3325
+$Comp
+L Connector:TestPoint TP8
+U 1 1 5EC63BF8
+P 7400 4075
+F 0 "TP8" H 7458 4193 50  0000 L CNN
+F 1 "TestPoint" H 7458 4102 50  0000 L CNN
+F 2 "athir:testpoint_probe" H 7600 4075 50  0001 C CNN
+F 3 "~" H 7600 4075 50  0001 C CNN
+	1    7400 4075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 4075 7400 4150
+Connection ~ 7400 4150
+Wire Wire Line
+	7400 4150 8050 4150
+$Comp
+L power:GND #PWR0107
+U 1 1 5EC872D1
+P 1050 3875
+F 0 "#PWR0107" H 1050 3625 50  0001 C CNN
+F 1 "GND" H 1055 3702 50  0000 C CNN
+F 2 "" H 1050 3875 50  0001 C CNN
+F 3 "" H 1050 3875 50  0001 C CNN
+	1    1050 3875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 3875 1050 3775
 $EndSCHEMATC
