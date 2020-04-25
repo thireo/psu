@@ -1096,4 +1096,100 @@ F 3 "" H 1050 3875 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1050 3875 1050 3775
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 5EA4C4E2
+P 1125 1925
+F 0 "H1" H 1225 1974 50  0000 L CNN
+F 1 "MountingHole_Pad" H 1225 1883 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1125 1925 50  0001 C CNN
+F 3 "~" H 1125 1925 50  0001 C CNN
+	1    1125 1925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0108
+U 1 1 5EA4CEE9
+P 1125 2075
+F 0 "#PWR0108" H 1125 1825 50  0001 C CNN
+F 1 "GND" H 1130 1902 50  0000 C CNN
+F 2 "" H 1125 2075 50  0001 C CNN
+F 3 "" H 1125 2075 50  0001 C CNN
+	1    1125 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1125 2075 1125 2025
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 5EA58747
+P 1375 1925
+F 0 "H2" H 1475 1974 50  0000 L CNN
+F 1 "MountingHole_Pad" H 1475 1883 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1375 1925 50  0001 C CNN
+F 3 "~" H 1375 1925 50  0001 C CNN
+	1    1375 1925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5EA58751
+P 1375 2075
+F 0 "#PWR0109" H 1375 1825 50  0001 C CNN
+F 1 "GND" H 1380 1902 50  0000 C CNN
+F 2 "" H 1375 2075 50  0001 C CNN
+F 3 "" H 1375 2075 50  0001 C CNN
+	1    1375 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1375 2075 1375 2025
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 5EA5E1DB
+P 1625 1925
+F 0 "H3" H 1725 1974 50  0000 L CNN
+F 1 "MountingHole_Pad" H 1725 1883 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1625 1925 50  0001 C CNN
+F 3 "~" H 1625 1925 50  0001 C CNN
+	1    1625 1925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5EA5E1E5
+P 1625 2075
+F 0 "#PWR0110" H 1625 1825 50  0001 C CNN
+F 1 "GND" H 1630 1902 50  0000 C CNN
+F 2 "" H 1625 2075 50  0001 C CNN
+F 3 "" H 1625 2075 50  0001 C CNN
+	1    1625 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1625 2075 1625 2025
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 5EA5E1F0
+P 1875 1925
+F 0 "H4" H 1975 1974 50  0000 L CNN
+F 1 "MountingHole_Pad" H 1975 1883 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 1875 1925 50  0001 C CNN
+F 3 "~" H 1875 1925 50  0001 C CNN
+	1    1875 1925
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 5EA5E1FA
+P 1875 2075
+F 0 "#PWR0111" H 1875 1825 50  0001 C CNN
+F 1 "GND" H 1880 1902 50  0000 C CNN
+F 2 "" H 1875 2075 50  0001 C CNN
+F 3 "" H 1875 2075 50  0001 C CNN
+	1    1875 2075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1875 2075 1875 2025
 $EndSCHEMATC
