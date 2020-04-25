@@ -138,7 +138,7 @@ F 12 "Active" H 4000 5875 60  0001 L CNN "Status"
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	3700 4475 3700 4250
+	3700 4475 3700 4400
 Wire Wire Line
 	3700 4250 4100 4250
 Wire Wire Line
@@ -188,7 +188,7 @@ F 3 "" H 3700 4950 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	3700 4950 3700 4875
+	3700 4950 3700 4925
 $Comp
 L Device:R_Small R?
 U 1 1 5EE75BA0
@@ -376,7 +376,7 @@ F 12 "Active" H 2000 7625 60  0001 L CNN "Status"
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1700 6225 1700 6000
+	1700 6225 1700 6125
 Wire Wire Line
 	1700 6000 2100 6000
 Wire Wire Line
@@ -426,7 +426,7 @@ F 3 "" H 1700 6700 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1700 6700 1700 6625
+	1700 6700 1700 6650
 $Comp
 L Device:R_Small R?
 U 1 1 5EF00CE4
@@ -821,4 +821,78 @@ F 3 "~" H 5500 4575 50  0001 C CNN
 	1    5500 4575
 	0    1    -1   0   
 $EndComp
+$Comp
+L Device:Q_NPN_ECBC Q9
+U 1 1 5EA5BCE1
+P 3225 4675
+F 0 "Q9" H 3513 4721 50  0000 L CNN
+F 1 "2N4921" H 3513 4630 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-126-3_Vertical" H 3425 4775 50  0001 C CNN
+F 3 "~" H 3225 4675 50  0001 C CNN
+	1    3225 4675
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3425 4675 3450 4675
+Wire Wire Line
+	3450 4675 3450 4400
+Wire Wire Line
+	3450 4400 3125 4400
+Wire Wire Line
+	3125 4400 3125 4475
+Wire Wire Line
+	3025 4475 3025 4400
+Wire Wire Line
+	3025 4400 3125 4400
+Connection ~ 3125 4400
+Wire Wire Line
+	3450 4400 3700 4400
+Connection ~ 3450 4400
+Connection ~ 3700 4400
+Wire Wire Line
+	3700 4400 3700 4250
+Wire Wire Line
+	3125 4875 3125 4925
+Wire Wire Line
+	3125 4925 3700 4925
+Connection ~ 3700 4925
+Wire Wire Line
+	3700 4925 3700 4875
+$Comp
+L Device:Q_NPN_ECBC Q8
+U 1 1 5EA75838
+P 1225 6400
+F 0 "Q8" H 1513 6446 50  0000 L CNN
+F 1 "2N4921" H 1513 6355 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-126-3_Vertical" H 1425 6500 50  0001 C CNN
+F 3 "~" H 1225 6400 50  0001 C CNN
+	1    1225 6400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1425 6400 1450 6400
+Wire Wire Line
+	1450 6400 1450 6125
+Wire Wire Line
+	1450 6125 1125 6125
+Wire Wire Line
+	1125 6125 1125 6200
+Wire Wire Line
+	1025 6200 1025 6125
+Wire Wire Line
+	1025 6125 1125 6125
+Connection ~ 1125 6125
+Wire Wire Line
+	1450 6125 1700 6125
+Connection ~ 1450 6125
+Wire Wire Line
+	1125 6600 1125 6650
+Wire Wire Line
+	1125 6650 1700 6650
+Connection ~ 1700 6125
+Wire Wire Line
+	1700 6125 1700 6000
+Connection ~ 1700 6650
+Wire Wire Line
+	1700 6650 1700 6625
 $EndSCHEMATC
