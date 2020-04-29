@@ -29,16 +29,16 @@ F 3 "http://www.ti.com/lit/ds/symlink/lmv324.pdf" H 1825 1325 50  0001 C CNN
 $EndComp
 $Comp
 L 74xx:74HCT04 U?
-U 1 1 5E9820B2
+U 2 1 5E9820B2
 P 4750 1425
 AR Path="/5E862B85/5E9820B2" Ref="U?"  Part="1" 
 AR Path="/5E96F94C/5E9820B2" Ref="U?"  Part="1" 
-AR Path="/5E975E66/5E9820B2" Ref="U16"  Part="1" 
-F 0 "U16" H 4750 1742 50  0000 C CNN
+AR Path="/5E975E66/5E9820B2" Ref="U4"  Part="2" 
+F 0 "U4" H 4750 1742 50  0000 C CNN
 F 1 "74HCT04" H 4750 1651 50  0000 C CNN
 F 2 "" H 4750 1425 50  0001 C CNN
 F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 4750 1425 50  0001 C CNN
-	1    4750 1425
+	2    4750 1425
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -78,7 +78,7 @@ AR Path="/5E96F94C/5E9820C4" Ref="R?"  Part="1"
 AR Path="/5E975E66/5E9820C4" Ref="R11"  Part="1" 
 F 0 "R11" V 4646 3025 50  0000 C CNN
 F 1 "10k POT" V 4555 3025 50  0000 C CNN
-F 2 "" H 4450 3025 50  0001 C CNN
+F 2 "Potentiometer_THT:Potentiometer_Bourns_3296W_Vertical" H 4450 3025 50  0001 C CNN
 F 3 "~" H 4450 3025 50  0001 C CNN
 	1    4450 3025
 	0    -1   -1   0   
@@ -143,7 +143,7 @@ AR Path="/5E96F94C/5E9820E2" Ref="D?"  Part="1"
 AR Path="/5E975E66/5E9820E2" Ref="D3"  Part="1" 
 F 0 "D3" V 5696 1532 50  0000 R CNN
 F 1 "TEMP_LED" V 5605 1532 50  0000 R CNN
-F 2 "" V 5650 1600 50  0001 C CNN
+F 2 "LED_THT:LED_D5.0mm" V 5650 1600 50  0001 C CNN
 F 3 "~" V 5650 1600 50  0001 C CNN
 	1    5650 1600
 	0    -1   -1   0   
@@ -460,7 +460,7 @@ AR Path="/5E96F94C/5E982189" Ref="D?"  Part="1"
 AR Path="/5E975E66/5E982189" Ref="D4"  Part="1" 
 F 0 "D4" H 5700 3466 50  0000 C CNN
 F 1 "D_Zener" H 5700 3375 50  0000 C CNN
-F 2 "" H 5700 3250 50  0001 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 5700 3250 50  0001 C CNN
 F 3 "~" H 5700 3250 50  0001 C CNN
 	1    5700 3250
 	1    0    0    -1  
@@ -574,4 +574,75 @@ Wire Wire Line
 Connection ~ 2325 3025
 Text HLabel 6525 2300 2    50   Output ~ 0
 OUT_1+
+$Comp
+L 74xx:74HCT04 U?
+U 7 1 5EAC3E32
+P 7450 1525
+AR Path="/5E862B85/5EAC3E32" Ref="U?"  Part="1" 
+AR Path="/5E96F94C/5EAC3E32" Ref="U?"  Part="1" 
+AR Path="/5E975E66/5EAC3E32" Ref="U4"  Part="7" 
+F 0 "U4" H 7450 1842 50  0000 C CNN
+F 1 "74HCT04" H 7450 1751 50  0000 C CNN
+F 2 "" H 7450 1525 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT04.pdf" H 7450 1525 50  0001 C CNN
+	7    7450 1525
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5EAC8AF7
+P 8000 1475
+AR Path="/5E862B85/5EAC8AF7" Ref="C?"  Part="1" 
+AR Path="/5E96F94C/5EAC8AF7" Ref="C?"  Part="1" 
+AR Path="/5E975E66/5EAC8AF7" Ref="C25"  Part="1" 
+F 0 "C25" H 8092 1521 50  0000 L CNN
+F 1 "100n" H 8092 1430 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8000 1475 50  0001 C CNN
+F 3 "~" H 8000 1475 50  0001 C CNN
+	1    8000 1475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 1375 8000 975 
+Wire Wire Line
+	8000 975  7450 975 
+Wire Wire Line
+	7450 975  7450 1025
+Wire Wire Line
+	7450 2025 7450 2075
+Wire Wire Line
+	7450 2075 8000 2075
+Wire Wire Line
+	8000 2075 8000 1575
+$Comp
+L power:+5C #PWR?
+U 1 1 5EACF7FB
+P 7450 900
+AR Path="/5E862B85/5EACF7FB" Ref="#PWR?"  Part="1" 
+AR Path="/5E96F94C/5EACF7FB" Ref="#PWR?"  Part="1" 
+AR Path="/5E975E66/5EACF7FB" Ref="#PWR0101"  Part="1" 
+F 0 "#PWR0101" H 7450 750 50  0001 C CNN
+F 1 "+5C" H 7465 1073 50  0000 C CNN
+F 2 "" H 7450 900 50  0001 C CNN
+F 3 "" H 7450 900 50  0001 C CNN
+	1    7450 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 900  7450 975 
+Connection ~ 7450 975 
+$Comp
+L power:GND #PWR0102
+U 1 1 5EAD2C37
+P 7450 2125
+F 0 "#PWR0102" H 7450 1875 50  0001 C CNN
+F 1 "GND" H 7455 1952 50  0000 C CNN
+F 2 "" H 7450 2125 50  0001 C CNN
+F 3 "" H 7450 2125 50  0001 C CNN
+	1    7450 2125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 2125 7450 2075
+Connection ~ 7450 2075
 $EndSCHEMATC
