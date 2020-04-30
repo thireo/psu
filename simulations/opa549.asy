@@ -5,7 +5,7 @@ WINDOW 0 8 -104 Bottom 2
 WINDOW 3 8 104 Top 2
 SYMATTR Prefix X
 SYMATTR Value OPA549
-SYMATTR ModelFile C:\Gits\psu\simulations\OPA549.LIB
+SYMATTR ModelFile OPA549.LIB
 PIN -64 -64 LEFT 8
 PINATTR PinName OUT
 PINATTR SpiceOrder 1
