@@ -29,11 +29,11 @@ int main(void)
 		_delay_ms(5000);
 		PORTB |= (1<<RELAY_PORT);
 		//dutycycle += 0x00FF;
-		OCR1A = 0x5555;
+		OCR1A = 250;
 		_delay_ms(5000);
 		PORTB &= ~(1<<RELAY_PORT);
 		//dutycycle += 0x00FF;
-		OCR1B = 0x0010;
+		OCR1A = 10;
 		/*PORTB ^= _BV(PORTB2);
 		_delay_ms(10);*/
 		/*PORTB |= (1<<FAN_PWM_PORT);
