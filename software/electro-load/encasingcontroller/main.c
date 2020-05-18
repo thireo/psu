@@ -29,7 +29,7 @@ int main(void)
 		_delay_ms(5000);
 		PORTB |= (1<<RELAY_PORT);
 		//dutycycle += 0x00FF;
-		OCR1A = 250;
+		OCR1A = 300;
 		_delay_ms(5000);
 		PORTB &= ~(1<<RELAY_PORT);
 		//dutycycle += 0x00FF;

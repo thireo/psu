@@ -11,11 +11,12 @@ void fan_init(void)
 	DDRB |= 1 << FAN_PWM_PORT;
 	DDRB |= 1 << RELAY_PORT;
 	
-	//ICR1 = 320;
-	OCR1A = 128;
+	ICR1 = 320;
+	OCR1A = 160;
 	
 	TCCR1A |= (1 << COM1A1) | (1 << COM1A0);
-	TCCR1A |= (1 << WGM12) | (1 << WGM10);
+	TCCR1A |= (1 << WGM11);
+	TCCR1B |= (1 << WGM12) | (1 << WGM13);
 	//TCCR1A |= (1 << WGM11);
 	//TCCR1A |= (1 << WGM12) | (1 << WGM13);
 	

@@ -3,29 +3,29 @@ encasingcontroller.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  0000019c  2**0
+  0 .data         00000000  00800100  00800100  000001b2  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000148  00000000  00000000  00000054  2**1
+  1 .text         0000015e  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      00000030  00000000  00000000  0000019c  2**0
+  2 .comment      00000030  00000000  00000000  000001b2  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000001cc  2**2
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000001e4  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000040  00000000  00000000  0000020c  2**0
+  4 .debug_aranges 00000040  00000000  00000000  00000224  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000008a5  00000000  00000000  0000024c  2**0
+  5 .debug_info   000008a5  00000000  00000000  00000264  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 000006df  00000000  00000000  00000af1  2**0
+  6 .debug_abbrev 000006df  00000000  00000000  00000b09  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000397  00000000  00000000  000011d0  2**0
+  7 .debug_line   000003a3  00000000  00000000  000011e8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000048  00000000  00000000  00001568  2**2
+  8 .debug_frame  00000048  00000000  00000000  0000158c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000003ac  00000000  00000000  000015b0  2**0
+  9 .debug_str    000003ac  00000000  00000000  000015d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000168  00000000  00000000  0000195c  2**0
+ 10 .debug_loc    00000168  00000000  00000000  00001980  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000020  00000000  00000000  00001ac4  2**0
+ 11 .debug_ranges 00000020  00000000  00000000  00001ae8  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -70,7 +70,7 @@ Disassembly of section .text:
   74:	11 e0       	ldi	r17, 0x01	; 1
   76:	a0 e0       	ldi	r26, 0x00	; 0
   78:	b1 e0       	ldi	r27, 0x01	; 1
-  7a:	e8 e4       	ldi	r30, 0x48	; 72
+  7a:	ee e5       	ldi	r30, 0x5E	; 94
   7c:	f1 e0       	ldi	r31, 0x01	; 1
   7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
   80:	05 90       	lpm	r0, Z+
@@ -78,8 +78,8 @@ Disassembly of section .text:
   84:	a0 30       	cpi	r26, 0x00	; 0
   86:	b1 07       	cpc	r27, r17
   88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
-  8a:	0e 94 62 00 	call	0xc4	; 0xc4 <main>
-  8e:	0c 94 a2 00 	jmp	0x144	; 0x144 <_exit>
+  8a:	0e 94 6d 00 	call	0xda	; 0xda <main>
+  8e:	0c 94 ad 00 	jmp	0x15a	; 0x15a <_exit>
 
 00000092 <__bad_interrupt>:
   92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -95,144 +95,154 @@ void fan_init(void)
 	DDRB |= 1 << RELAY_PORT;
   98:	22 9a       	sbi	0x04, 2	; 4
 	
-	//ICR1 = 320;
-	OCR1A = 128;
-  9a:	e0 e8       	ldi	r30, 0x80	; 128
-  9c:	f0 e0       	ldi	r31, 0x00	; 0
-  9e:	f0 93 89 00 	sts	0x0089, r31	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
-  a2:	e0 93 88 00 	sts	0x0088, r30	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
+	ICR1 = 320;
+  9a:	80 e4       	ldi	r24, 0x40	; 64
+  9c:	91 e0       	ldi	r25, 0x01	; 1
+  9e:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7e0087>
+  a2:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7e0086>
+	OCR1A = 160;
+  a6:	80 ea       	ldi	r24, 0xA0	; 160
+  a8:	90 e0       	ldi	r25, 0x00	; 0
+  aa:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7e0089>
+  ae:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7e0088>
 	
 	TCCR1A |= (1 << COM1A1) | (1 << COM1A0);
-  a6:	80 81       	ld	r24, Z
-  a8:	80 6c       	ori	r24, 0xC0	; 192
-  aa:	80 83       	st	Z, r24
-	TCCR1A |= (1 << WGM12) | (1 << WGM10);
-  ac:	80 81       	ld	r24, Z
-  ae:	89 60       	ori	r24, 0x09	; 9
-  b0:	80 83       	st	Z, r24
+  b2:	e0 e8       	ldi	r30, 0x80	; 128
+  b4:	f0 e0       	ldi	r31, 0x00	; 0
+  b6:	80 81       	ld	r24, Z
+  b8:	80 6c       	ori	r24, 0xC0	; 192
+  ba:	80 83       	st	Z, r24
+	TCCR1A |= (1 << WGM11);
+  bc:	80 81       	ld	r24, Z
+  be:	82 60       	ori	r24, 0x02	; 2
+  c0:	80 83       	st	Z, r24
+	TCCR1B |= (1 << WGM12) | (1 << WGM13);
+  c2:	e1 e8       	ldi	r30, 0x81	; 129
+  c4:	f0 e0       	ldi	r31, 0x00	; 0
+  c6:	80 81       	ld	r24, Z
+  c8:	88 61       	ori	r24, 0x18	; 24
+  ca:	80 83       	st	Z, r24
 	//TCCR1A |= (1 << WGM11);
 	//TCCR1A |= (1 << WGM12) | (1 << WGM13);
 	
 	TCCR1B &= ~((1 << CS11) | (1 << CS12));
-  b2:	e1 e8       	ldi	r30, 0x81	; 129
-  b4:	f0 e0       	ldi	r31, 0x00	; 0
-  b6:	80 81       	ld	r24, Z
-  b8:	89 7f       	andi	r24, 0xF9	; 249
-  ba:	80 83       	st	Z, r24
+  cc:	80 81       	ld	r24, Z
+  ce:	89 7f       	andi	r24, 0xF9	; 249
+  d0:	80 83       	st	Z, r24
 	TCCR1B |= (1 << CS10);
-  bc:	80 81       	ld	r24, Z
-  be:	81 60       	ori	r24, 0x01	; 1
-  c0:	80 83       	st	Z, r24
-  c2:	08 95       	ret
+  d2:	80 81       	ld	r24, Z
+  d4:	81 60       	ori	r24, 0x01	; 1
+  d6:	80 83       	st	Z, r24
+  d8:	08 95       	ret
 
-000000c4 <main>:
+000000da <main>:
 
 int main(void)
 {
 	int dutycycle = 0x3FFF;
 	//_delay_ms(5000);
 	fan_init();
-  c4:	0e 94 4b 00 	call	0x96	; 0x96 <fan_init>
+  da:	0e 94 4b 00 	call	0x96	; 0x96 <fan_init>
 	PORTB |= (1<<RELAY_PORT);
-  c8:	2a 9a       	sbi	0x05, 2	; 5
+  de:	2a 9a       	sbi	0x05, 2	; 5
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  ca:	2f ef       	ldi	r18, 0xFF	; 255
-  cc:	44 e3       	ldi	r20, 0x34	; 52
-  ce:	5c e0       	ldi	r21, 0x0C	; 12
-  d0:	21 50       	subi	r18, 0x01	; 1
-  d2:	40 40       	sbci	r20, 0x00	; 0
-  d4:	50 40       	sbci	r21, 0x00	; 0
-  d6:	e1 f7       	brne	.-8      	; 0xd0 <main+0xc>
-  d8:	00 c0       	rjmp	.+0      	; 0xda <main+0x16>
-  da:	00 00       	nop
+  e0:	2f ef       	ldi	r18, 0xFF	; 255
+  e2:	44 e3       	ldi	r20, 0x34	; 52
+  e4:	5c e0       	ldi	r21, 0x0C	; 12
+  e6:	21 50       	subi	r18, 0x01	; 1
+  e8:	40 40       	sbci	r20, 0x00	; 0
+  ea:	50 40       	sbci	r21, 0x00	; 0
+  ec:	e1 f7       	brne	.-8      	; 0xe6 <main+0xc>
+  ee:	00 c0       	rjmp	.+0      	; 0xf0 <main+0x16>
+  f0:	00 00       	nop
 	_delay_ms(500);
 	PORTB &= ~(1<<RELAY_PORT);
-  dc:	2a 98       	cbi	0x05, 2	; 5
-  de:	6f ef       	ldi	r22, 0xFF	; 255
-  e0:	89 e6       	ldi	r24, 0x69	; 105
-  e2:	98 e1       	ldi	r25, 0x18	; 24
-  e4:	61 50       	subi	r22, 0x01	; 1
-  e6:	80 40       	sbci	r24, 0x00	; 0
-  e8:	90 40       	sbci	r25, 0x00	; 0
-  ea:	e1 f7       	brne	.-8      	; 0xe4 <main+0x20>
-  ec:	00 c0       	rjmp	.+0      	; 0xee <main+0x2a>
-  ee:	00 00       	nop
+  f2:	2a 98       	cbi	0x05, 2	; 5
+  f4:	6f ef       	ldi	r22, 0xFF	; 255
+  f6:	89 e6       	ldi	r24, 0x69	; 105
+  f8:	98 e1       	ldi	r25, 0x18	; 24
+  fa:	61 50       	subi	r22, 0x01	; 1
+  fc:	80 40       	sbci	r24, 0x00	; 0
+  fe:	90 40       	sbci	r25, 0x00	; 0
+ 100:	e1 f7       	brne	.-8      	; 0xfa <main+0x20>
+ 102:	00 c0       	rjmp	.+0      	; 0x104 <main+0x2a>
+ 104:	00 00       	nop
 	_delay_ms(1000);
 	PORTB |= (1<<RELAY_PORT);
-  f0:	2a 9a       	sbi	0x05, 2	; 5
-  f2:	2f ef       	ldi	r18, 0xFF	; 255
-  f4:	49 e6       	ldi	r20, 0x69	; 105
-  f6:	58 e1       	ldi	r21, 0x18	; 24
-  f8:	21 50       	subi	r18, 0x01	; 1
-  fa:	40 40       	sbci	r20, 0x00	; 0
-  fc:	50 40       	sbci	r21, 0x00	; 0
-  fe:	e1 f7       	brne	.-8      	; 0xf8 <main+0x34>
- 100:	00 c0       	rjmp	.+0      	; 0x102 <main+0x3e>
- 102:	00 00       	nop
+ 106:	2a 9a       	sbi	0x05, 2	; 5
+ 108:	2f ef       	ldi	r18, 0xFF	; 255
+ 10a:	49 e6       	ldi	r20, 0x69	; 105
+ 10c:	58 e1       	ldi	r21, 0x18	; 24
+ 10e:	21 50       	subi	r18, 0x01	; 1
+ 110:	40 40       	sbci	r20, 0x00	; 0
+ 112:	50 40       	sbci	r21, 0x00	; 0
+ 114:	e1 f7       	brne	.-8      	; 0x10e <main+0x34>
+ 116:	00 c0       	rjmp	.+0      	; 0x118 <main+0x3e>
+ 118:	00 00       	nop
 	_delay_ms(1000);
 	PORTB &= ~(1<<RELAY_PORT);
- 104:	2a 98       	cbi	0x05, 2	; 5
+ 11a:	2a 98       	cbi	0x05, 2	; 5
     /* Replace with your application code */
 	while(1){
 		_delay_ms(5000);
 		PORTB |= (1<<RELAY_PORT);
 		//dutycycle += 0x00FF;
-		OCR1A = 250;
- 106:	e8 e8       	ldi	r30, 0x88	; 136
- 108:	f0 e0       	ldi	r31, 0x00	; 0
- 10a:	2a ef       	ldi	r18, 0xFA	; 250
- 10c:	30 e0       	ldi	r19, 0x00	; 0
+		OCR1A = 300;
+ 11c:	e8 e8       	ldi	r30, 0x88	; 136
+ 11e:	f0 e0       	ldi	r31, 0x00	; 0
+ 120:	2c e2       	ldi	r18, 0x2C	; 44
+ 122:	31 e0       	ldi	r19, 0x01	; 1
 		_delay_ms(5000);
 		PORTB &= ~(1<<RELAY_PORT);
 		//dutycycle += 0x00FF;
 		OCR1A = 10;
- 10e:	8a e0       	ldi	r24, 0x0A	; 10
- 110:	90 e0       	ldi	r25, 0x00	; 0
- 112:	6f ef       	ldi	r22, 0xFF	; 255
- 114:	41 e1       	ldi	r20, 0x11	; 17
- 116:	5a e7       	ldi	r21, 0x7A	; 122
- 118:	61 50       	subi	r22, 0x01	; 1
- 11a:	40 40       	sbci	r20, 0x00	; 0
- 11c:	50 40       	sbci	r21, 0x00	; 0
- 11e:	e1 f7       	brne	.-8      	; 0x118 <main+0x54>
- 120:	00 c0       	rjmp	.+0      	; 0x122 <main+0x5e>
- 122:	00 00       	nop
+ 124:	8a e0       	ldi	r24, 0x0A	; 10
+ 126:	90 e0       	ldi	r25, 0x00	; 0
+ 128:	6f ef       	ldi	r22, 0xFF	; 255
+ 12a:	41 e1       	ldi	r20, 0x11	; 17
+ 12c:	5a e7       	ldi	r21, 0x7A	; 122
+ 12e:	61 50       	subi	r22, 0x01	; 1
+ 130:	40 40       	sbci	r20, 0x00	; 0
+ 132:	50 40       	sbci	r21, 0x00	; 0
+ 134:	e1 f7       	brne	.-8      	; 0x12e <main+0x54>
+ 136:	00 c0       	rjmp	.+0      	; 0x138 <main+0x5e>
+ 138:	00 00       	nop
 	_delay_ms(1000);
 	PORTB &= ~(1<<RELAY_PORT);
     /* Replace with your application code */
 	while(1){
 		_delay_ms(5000);
 		PORTB |= (1<<RELAY_PORT);
- 124:	2a 9a       	sbi	0x05, 2	; 5
+ 13a:	2a 9a       	sbi	0x05, 2	; 5
 		//dutycycle += 0x00FF;
-		OCR1A = 250;
- 126:	31 83       	std	Z+1, r19	; 0x01
- 128:	20 83       	st	Z, r18
- 12a:	6f ef       	ldi	r22, 0xFF	; 255
- 12c:	41 e1       	ldi	r20, 0x11	; 17
- 12e:	5a e7       	ldi	r21, 0x7A	; 122
- 130:	61 50       	subi	r22, 0x01	; 1
- 132:	40 40       	sbci	r20, 0x00	; 0
- 134:	50 40       	sbci	r21, 0x00	; 0
- 136:	e1 f7       	brne	.-8      	; 0x130 <main+0x6c>
- 138:	00 c0       	rjmp	.+0      	; 0x13a <main+0x76>
- 13a:	00 00       	nop
+		OCR1A = 300;
+ 13c:	31 83       	std	Z+1, r19	; 0x01
+ 13e:	20 83       	st	Z, r18
+ 140:	6f ef       	ldi	r22, 0xFF	; 255
+ 142:	41 e1       	ldi	r20, 0x11	; 17
+ 144:	5a e7       	ldi	r21, 0x7A	; 122
+ 146:	61 50       	subi	r22, 0x01	; 1
+ 148:	40 40       	sbci	r20, 0x00	; 0
+ 14a:	50 40       	sbci	r21, 0x00	; 0
+ 14c:	e1 f7       	brne	.-8      	; 0x146 <main+0x6c>
+ 14e:	00 c0       	rjmp	.+0      	; 0x150 <main+0x76>
+ 150:	00 00       	nop
 		_delay_ms(5000);
 		PORTB &= ~(1<<RELAY_PORT);
- 13c:	2a 98       	cbi	0x05, 2	; 5
+ 152:	2a 98       	cbi	0x05, 2	; 5
 		//dutycycle += 0x00FF;
 		OCR1A = 10;
- 13e:	91 83       	std	Z+1, r25	; 0x01
- 140:	80 83       	st	Z, r24
- 142:	e7 cf       	rjmp	.-50     	; 0x112 <main+0x4e>
+ 154:	91 83       	std	Z+1, r25	; 0x01
+ 156:	80 83       	st	Z, r24
+ 158:	e7 cf       	rjmp	.-50     	; 0x128 <main+0x4e>
 
-00000144 <_exit>:
- 144:	f8 94       	cli
+0000015a <_exit>:
+ 15a:	f8 94       	cli
 
-00000146 <__stop_program>:
- 146:	ff cf       	rjmp	.-2      	; 0x146 <__stop_program>
+0000015c <__stop_program>:
+ 15c:	ff cf       	rjmp	.-2      	; 0x15c <__stop_program>

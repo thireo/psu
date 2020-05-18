@@ -35,10 +35,10 @@ uint8_t termo[8] =
 
 void lcd_pin_init(void)
 {
-	DDRB |= (0x01 << LCD_PIN_RS);
-	DDRC |= (0x01 << LCD_PIN_D4) || (0x01 << LCD_PIN_D5) || (0x01 << LCD_PIN_D6) || (0x01 << LCD_PIN_D7);
-	DDRD |= (0x01 << LCD_PIN_RW) || (0x01 << LCD_PIN_BCKL) || (0x01 << LCD_PIN_E);
-	PORTD |= (0x01 << LCD_PIN_BCKL);
+	DDRD |= (0x01 << LCD_PIN_RS);
+	DDRD |= (0x01 << LCD_PIN_D4) || (0x01 << LCD_PIN_D5) || (0x01 << LCD_PIN_D6) || (0x01 << LCD_PIN_D7);
+	DDRD |= (0x01 << LCD_PIN_RW) || (0x01 << LCD_PIN_E);
+	//PORTD |= (0x01 << LCD_PIN_BCKL);
 }
 
 void lcd_e_toggle(void)
