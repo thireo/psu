@@ -33,6 +33,9 @@ int main(void)
 	_delay_ms(500);
 	val = i2c_read(MCP_ADDR_0,0x0001);
 	_delay_ms(5000);
+	val = i2c_read(ADS_ADDR_0,0x0000);
+	_delay_ms(5000);
+	val = i2c_read(ADS_ADDR_1,0x0000);
 	lcd_set_line(2);
 	sprintf(buffer,"val: %d",val);
 	lcd_send_string(buffer);
