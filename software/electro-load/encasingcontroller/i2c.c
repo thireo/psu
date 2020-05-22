@@ -37,7 +37,6 @@ int32_t i2c_read(uint8_t addr,uint16_t reg)
 		lcd_clear_screen();
 		lcd_set_line(1);
 		lcd_send_string("MR_START Sent!");
-		//USART_send('\n');
 	}
 	else
 	{
@@ -54,7 +53,6 @@ int32_t i2c_read(uint8_t addr,uint16_t reg)
 		lcd_clear_screen();
 		lcd_set_line(1);
 		lcd_send_string("MR_SLA_R_ACK Sent!");
-		//USART_send('\n');
 	}
 	else
 	{
@@ -71,7 +69,6 @@ int32_t i2c_read(uint8_t addr,uint16_t reg)
 		lcd_clear_screen();
 		lcd_set_line(1);
 		lcd_send_string("MR_DATA_ACK sent");
-		//USART_send('\n');
 	}
 	else
 	{
@@ -88,7 +85,6 @@ int32_t i2c_read(uint8_t addr,uint16_t reg)
 		lcd_clear_screen();
 		lcd_set_line(1);
 		lcd_send_string("MR_DATA_ACK sent!");
-		//USART_send('\n');
 	}
 	else
 	{
@@ -106,8 +102,6 @@ int32_t i2c_read(uint8_t addr,uint16_t reg)
 		lcd_clear_screen();
 		lcd_set_line(1);
 		lcd_send_string("MR_REP_START sent!");
-		//USART_putstring("High Byte Received NACK Sent!");
-		//USART_send('\n');
 	}
 	else
 	{
@@ -138,12 +132,6 @@ int32_t i2c_read(uint8_t addr,uint16_t reg)
 		lcd_send_string(string_buf);
 	}
 	
-	//dtostrf(databuf,10,5,buffer);
-	//itoa(databuf,buffer,10);
-	//USART_putstring(buffer);
-	//USART_send('\n');
-	//databuf = TWDR;
-	//databuf = (databuf << 8) && 0xFF00;
 	TWCR = (1<<TWINT | 1<<TWEN);
 	while(!(TWCR & (1<<TWINT)));
 
@@ -152,21 +140,14 @@ int32_t i2c_read(uint8_t addr,uint16_t reg)
 		//USART_putstring("Low Byte Received NACK Sent!");
 		//USART_send('\n');
 	}
-	LowByte = TWDR;
-	databuf |= LowByte;// && 0xFF;
-	//dtostrf(LowByte,10,5,buffer);
-	//itoa(LowByte,buffer,10);
-	//USART_putstring(buffer);
-	//USART_send('\n');
+	//LowByte = TWDR;
+	//databuf |= LowByte;
+
 	TWCR = (1 << TWINT ) | (1 << TWEN ) | (1 << TWSTO );
 	//USART_putstring("Stop Sent!");
 	//USART_send('\n');
 	if (databuf != 0xFFFF)
 	{
-		//USART_putstring("NOT BAD!!");
-		//USART_send('\n');
-		//itoa(databuf,buffer,10);
-		//USART_putstring(buffer);
 	}
 	return databuf;
 }

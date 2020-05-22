@@ -9,9 +9,11 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+
 #include <util/delay.h>
 #include <avr/io.h>
 #include "lcd.h"
+
 
 //#define F_CPU 16000000UL
 //2000000UL

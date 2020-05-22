@@ -29,13 +29,12 @@ int main(void)
 	lcd_2004_init();
 	lcd_clear_screen();
 	fan_init();
-	i2c_init();
 	_delay_ms(500);
+	adc_init();
+	
 	val = i2c_read(MCP_ADDR_0,0x0001);
-	_delay_ms(5000);
-	val = i2c_read(ADS_ADDR_0,0x0000);
-	_delay_ms(5000);
-	val = i2c_read(ADS_ADDR_1,0x0000);
+
+	lcd_clear_screen();
 	lcd_set_line(2);
 	sprintf(buffer,"val: %d",val);
 	lcd_send_string(buffer);

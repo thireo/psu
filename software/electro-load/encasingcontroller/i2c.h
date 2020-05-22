@@ -15,9 +15,8 @@ void i2c_init(void);
 void i2c_write_byte(uint8_t byte_in);
 int32_t i2c_read(uint8_t addr,uint16_t reg);
 
-#define ADS_ADDR_0 0x90
-#define ADS_ADDR_1 0x92
 #define MCP_ADDR_0 0xC0
+
 
 #define MT_START			0x08	//A START condition has been transmitted.
 #define MT_REP_START		0x10	//A repeated START condition has been transmitted.
