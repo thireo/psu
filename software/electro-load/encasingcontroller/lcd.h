@@ -14,16 +14,16 @@
 #include "avr/delay.h"
 
 //LCD Defines
-#define LCD_PIN_RS PIND3
+#define LCD_PIN_RS PORTD3
 
-#define LCD_PIN_D4 PIND4
-#define LCD_PIN_D5 PIND7
-#define LCD_PIN_D6 PIND6
-#define LCD_PIN_D7 PIND5
+#define LCD_PIN_D4 PORTD4
+#define LCD_PIN_D5 PORTD7
+#define LCD_PIN_D6 PORTD6
+#define LCD_PIN_D7 PORTD5
 
-#define LCD_PIN_RW PIND2
+#define LCD_PIN_RW PORTD2
 //#define LCD_PIN_BCKL PIND3
-#define LCD_PIN_E PIND1
+#define LCD_PIN_E PORTD1
 
 #define LCD_CMD_SET_INTERFACE 0x28
 #define LCD_CMD_EN_DISP 0x0F
@@ -49,8 +49,8 @@ void lcd_send(uint8_t byte);*/
 
 
 
-
-
+void lcd_2004_init(void);
+void lcd_send_string(char* string);
 
 void lcd_set_nibble(uint8_t data);
 void lcd_pin_init(void);

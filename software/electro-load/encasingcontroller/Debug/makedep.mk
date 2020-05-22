@@ -4,6 +4,8 @@
 
 fan.c
 
+i2c.c
+
 lcd.c
 
 main.c
