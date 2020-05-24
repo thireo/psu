@@ -5,7 +5,10 @@
  * Author : Andreas
  */ 
 
+
 #define F_CPU 8000000UL
+
+
 
 #include "main.h"
 #include "fan.h"
@@ -32,12 +35,8 @@ int main(void)
 	_delay_ms(500);
 	adc_init();
 	
-	val = i2c_read(MCP_ADDR_0,0x0001);
-
-	lcd_clear_screen();
-	lcd_set_line(2);
-	sprintf(buffer,"val: %d",val);
-	lcd_send_string(buffer);
+	dac_init();
+	
 	PORTB |= (1<<RELAY_PORT);
 	_delay_ms(500);
 	PORTB &= ~(1<<RELAY_PORT);
@@ -76,7 +75,7 @@ int main(void)
 		lcd_set_line(1);
 		//_delay_ms(10);
 		lcd_send_string(buffer);
-		
+		mcp_fast_write(dutycycle*15);
 		/*PORTB ^= _BV(PORTB2);
 		_delay_ms(10);*/
 		/*PORTB |= (1<<FAN_PWM_PORT);

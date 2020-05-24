@@ -8,10 +8,13 @@
 
 #ifndef LCD_H_
 #define LCD_H_
+
+
+#include "main.h"
 #include "avr/io.h"
 #include "stdbool.h"
-#include "main.h"
-#include "avr/delay.h"
+
+//#include "util/delay.h"
 
 //LCD Defines
 #define LCD_PIN_RS PORTD3

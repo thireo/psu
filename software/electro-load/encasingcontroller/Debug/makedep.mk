@@ -4,6 +4,8 @@
 
 adc.c
 
+dac.c
+
 fan.c
 
 i2c.c

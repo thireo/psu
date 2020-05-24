@@ -6,6 +6,7 @@
  */ 
 
 #include "lcd.h"
+//#define F_CPU 8000000UL
 
 
 //Custom Characters
