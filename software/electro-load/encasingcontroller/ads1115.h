@@ -12,6 +12,9 @@
 #define ADS_ADDR_0 0x90
 #define ADS_ADDR_1 0x92
 
+#define ADS_ALERT_0	PORTC0
+#define ADS_ALERT_1	PORTC1
+
 #define ADS1115_ADDRESS_ADDR_GND    0x48 // address pin low (GND)
 #define ADS1115_ADDRESS_ADDR_VDD    0x49 // address pin high (VCC)
 #define ADS1115_ADDRESS_ADDR_SDA    0x4A // address pin tied to SDA pin

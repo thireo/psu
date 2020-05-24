@@ -14,6 +14,8 @@ void adc_init(void)
 	uint32_t val = 0x0000;
 	char* buf[16];
 	
+	adc_extint_init();
+	
 	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);     // set device address and write mode
 	i2c_write(ADS1115_RA_CONFIG);                        // write address = 5
 	i2c_rep_start(ADS_ADDR_0+I2C_READ);       // set device address and read mode
@@ -64,4 +66,33 @@ void adc_init(void)
 		lcd_send_string(buf);
 	}
 	_delay_ms(5000);*/
+}
+
+void adc_extint_init(void)
+{
+	DDRC &= ~((1 << ADS_ALERT_0) | (1 << ADS_ALERT_1));
+	PORTC |= (1 << ADS_ALERT_0) | (1 << ADS_ALERT_1);
+	
+	//Pin change trigger of INT8 and INT9
+	PCMSK1 |= (1 << PCINT8) | (1 << PCINT9);
+	
+	//Enable PCINT8 and PCINT9
+	PCICR |= (1 << PCIE1);
+	
+}
+
+ISR (PCINT1_vect)
+{
+	if(ADS_ALERT_0 == 0)
+	{
+		//Conversion ready from ADS0
+	}
+	else if(ADS_ALERT_1 == 0)
+	{
+		//Conversion ready from ADS1
+	}
+	else
+	{
+		//ERROR
+	}
 }

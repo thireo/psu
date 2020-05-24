@@ -17,7 +17,7 @@
 
 
 void adc_init(void);
-
+void adc_extint_init(void);
 
 
 #endif /* ADC_H_ */
