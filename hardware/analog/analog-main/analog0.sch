@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 6
+Sheet 2 7
 Title ""
 Date ""
 Rev ""
@@ -380,19 +380,6 @@ Wire Wire Line
 	6025 875  6025 925 
 Connection ~ 6025 925 
 $Comp
-L power:+36V #PWR08
-U 1 1 5E8FA61F
-P 8225 1950
-AR Path="/5E862B85/5E8FA61F" Ref="#PWR08"  Part="1" 
-AR Path="/5E96F94C/5E8FA61F" Ref="#PWR?"  Part="1" 
-F 0 "#PWR08" H 8225 1800 50  0001 C CNN
-F 1 "+36V" H 8240 2123 50  0000 C CNN
-F 2 "" H 8225 1950 50  0001 C CNN
-F 3 "" H 8225 1950 50  0001 C CNN
-	1    8225 1950
-	1    0    0    -1  
-$EndComp
-$Comp
 L Relay:SANYOU_SRD_Form_C K1
 U 1 1 5E8FE364
 P 10000 2725
@@ -406,7 +393,7 @@ F 3 "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" H 10000 2725 50  000
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	9700 2525 9100 2525
+	9700 2525 9300 2525
 Connection ~ 9100 2525
 $Comp
 L dk_Transistors-Bipolar-BJT-Single:2N2222 Q1
@@ -430,7 +417,6 @@ F 12 "Active" H 10500 4850 60  0001 L CNN "Status"
 	1    10300 3650
 	1    0    0    -1  
 $EndComp
-NoConn ~ 10300 2625
 $Comp
 L Device:D_Zener D2
 U 1 1 5E90E654
@@ -547,6 +533,71 @@ Wire Wire Line
 Wire Wire Line
 	7050 3150 6625 3150
 Connection ~ 6625 3150
-Text HLabel 10800 2425 2    50   Output ~ 0
+Text HLabel 10825 2425 2    50   Output ~ 0
 OUT_0+
+$Comp
+L Device:CP C?
+U 1 1 5EBCEB41
+P 9300 2750
+AR Path="/5EBAB32F/5EBCEB41" Ref="C?"  Part="1" 
+AR Path="/5E862B85/5EBCEB41" Ref="C30"  Part="1" 
+F 0 "C30" H 9418 2796 50  0000 L CNN
+F 1 "4700u" H 9418 2705 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D26.0mm_P10.00mm_SnapIn" H 9338 2600 50  0001 C CNN
+F 3 "~" H 9300 2750 50  0001 C CNN
+	1    9300 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 2600 9300 2525
+Connection ~ 9300 2525
+Wire Wire Line
+	9300 2525 9100 2525
+$Comp
+L power:GND #PWR0109
+U 1 1 5EBD1EA5
+P 9300 3000
+AR Path="/5E862B85/5EBD1EA5" Ref="#PWR0109"  Part="1" 
+AR Path="/5E96F94C/5EBD1EA5" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0109" H 9300 2750 50  0001 C CNN
+F 1 "GND" H 9305 2827 50  0000 C CNN
+F 2 "" H 9300 3000 50  0001 C CNN
+F 3 "" H 9300 3000 50  0001 C CNN
+	1    9300 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 2900 9300 3000
+Text Label 8225 1950 2    50   ~ 0
+AN0_VCC
+$Comp
+L Device:R_Small R?
+U 1 1 5EBF84B9
+P 10525 2625
+AR Path="/5E862B85/5EBF84B9" Ref="R?"  Part="1" 
+AR Path="/5E96F94C/5EBF84B9" Ref="R?"  Part="1" 
+F 0 "R?" V 10329 2625 50  0000 C CNN
+F 1 "100R 1W+" V 10420 2625 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 10525 2625 50  0001 C CNN
+F 3 "~" H 10525 2625 50  0001 C CNN
+	1    10525 2625
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10425 2625 10300 2625
+$Comp
+L power:GND #PWR?
+U 1 1 5EBFABE3
+P 10725 2700
+F 0 "#PWR?" H 10725 2450 50  0001 C CNN
+F 1 "GND" H 10730 2527 50  0000 C CNN
+F 2 "" H 10725 2700 50  0001 C CNN
+F 3 "" H 10725 2700 50  0001 C CNN
+	1    10725 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10725 2700 10725 2625
+Wire Wire Line
+	10725 2625 10625 2625
 $EndSCHEMATC

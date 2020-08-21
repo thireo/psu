@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 1 7
 Title ""
 Date ""
 Rev ""
@@ -197,4 +197,10 @@ Wire Wire Line
 	5750 2375 6100 2375
 Wire Wire Line
 	5750 2550 6025 2550
+$Sheet
+S 4525 3700 1075 1425
+U 5EBAB32F
+F0 "AC2DC" 50
+F1 "ac2dc.sch" 50
+$EndSheet
 $EndSCHEMATC

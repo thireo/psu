@@ -176,28 +176,6 @@ F 3 "" H 1875 1175 50  0001 C CNN
 	1    1875 1175
 	1    0    0    -1  
 $EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:2N2222 Q?
-U 1 1 5EAD9292
-P 3200 1500
-AR Path="/5EAD9292" Ref="Q?"  Part="1" 
-AR Path="/5E82E2D2/5EAD9292" Ref="Q5"  Part="1" 
-F 0 "Q5" V 3547 1500 60  0000 C CNN
-F 1 "2N2222" V 3441 1500 60  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3400 1700 60  0001 L CNN
-F 3 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=2N2221.PDF" H 3400 1800 60  0001 L CNN
-F 4 "2N2222CS-ND" H 3400 1900 60  0001 L CNN "Digi-Key_PN"
-F 5 "2N2222" H 3400 2000 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 3400 2100 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 3400 2200 60  0001 L CNN "Family"
-F 8 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=2N2221.PDF" H 3400 2300 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/central-semiconductor-corp/2N2222/2N2222CS-ND/4806844" H 3400 2400 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 30V 0.8A TO-18" H 3400 2500 60  0001 L CNN "Description"
-F 11 "Central Semiconductor Corp" H 3400 2600 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 3400 2700 60  0001 L CNN "Status"
-	1    3200 1500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1875 1750 1875 1275
 Wire Wire Line
@@ -1518,4 +1496,26 @@ Wire Wire Line
 Connection ~ 1550 2150
 Wire Wire Line
 	1550 2150 1675 2150
+$Comp
+L dk_Transistors-Bipolar-BJT-Single:2N3904 Q?
+U 1 1 5EC1DD71
+P 3200 1500
+F 0 "Q?" H 3388 1553 60  0000 L CNN
+F 1 "2N3904" H 3388 1447 60  0000 L CNN
+F 2 "digikey-footprints:TO-92-3" H 3400 1700 60  0001 L CNN
+F 3 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=LSSGP072.PDF" H 3400 1800 60  0001 L CNN
+F 4 "2N3904CS-ND" H 3400 1900 60  0001 L CNN "Digi-Key_PN"
+F 5 "2N3904" H 3400 2000 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 3400 2100 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 3400 2200 60  0001 L CNN "Family"
+F 8 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=LSSGP072.PDF" H 3400 2300 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/central-semiconductor-corp/2N3904/2N3904CS-ND/4806876" H 3400 2400 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V TO-92" H 3400 2500 60  0001 L CNN "Description"
+F 11 "Central Semiconductor Corp" H 3400 2600 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3400 2700 60  0001 L CNN "Status"
+	1    3200 1500
+	1    0    0    -1  
+$EndComp
+Text Notes 2500 1575 0    50   ~ 0
+Rettet fra Rev 2 - C og E var byttet\n
 $EndSCHEMATC

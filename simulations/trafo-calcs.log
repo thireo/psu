@@ -1,11 +1,15 @@
+<<<<<<< Updated upstream
 Questionable use of curly braces in "r7 n009 n009 {x}"
     Error: undefined symbol in: "[x]"
 Circuit: * Z:\home\at\gits\psu\simulations\trafo-calcs.asc
+=======
+Circuit: * C:\Gits\psu\simulations\trafo-calcs.asc
+>>>>>>> Stashed changes
 
 R7: both pins shorted together -- ignoring.
-R10: both pins shorted together -- ignoring.
-WARNING: Node N015 is floating.
+WARNING: Node N022 is floating.
 
+WARNING: Less than two connections to node N021.  This node is used by R12.
 Early termination of direct N-R iteration.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
@@ -27,16 +31,25 @@ Gmin = 2.70769e-013
 Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
+<<<<<<< Updated upstream
 .step v2=2
 .step v2=2.5
 .step v2=3
 
 Date: Thu Apr 30 22:09:04 2020
 Total elapsed time: 5.263 seconds.
+=======
+.step x=0.001
+.step x=3300
+
+Date: Tue May 12 19:14:05 2020
+Total elapsed time: 14.470 seconds.
+>>>>>>> Stashed changes
 
 tnom = 27
 temp = 27
 method = modified trap
+<<<<<<< Updated upstream
 totiter = 22844
 traniter = 22351
 tranpoints = 6098
@@ -48,4 +61,17 @@ solver = Normal
 Thread vector: 57.2/15.8[4] 24.2/7.5[4] 11.0/6.8[4] 2.4/3.4[1]  2592/500
 Matrix Compiler1: 56.40 KB object code size  25.3/15.6/[5.7]
 Matrix Compiler2: 31.14 KB object code size  12.3/13.0/[2.9]
+=======
+totiter = 215119
+traniter = 214619
+tranpoints = 57368
+accept = 38809
+rejected = 18559
+matrix size = 259
+fillins = 557
+solver = Normal
+Thread vector: 20.1/11.1[8] 11.8/4.5[8] 6.0/3.4[8] 0.9/3.2[1]  2592/500
+Matrix Compiler1: 58.25 KB object code size  8.7/3.6/[2.8]
+Matrix Compiler2: 32.83 KB object code size  4.5/3.6/[1.4]
+>>>>>>> Stashed changes
 

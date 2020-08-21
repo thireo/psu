@@ -727,36 +727,6 @@ X A0 6 -500 -100 150 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# dk_Transistors-Bipolar-BJT-Single_2N2222
-#
-DEF dk_Transistors-Bipolar-BJT-Single_2N2222 Q 0 0 Y Y 1 F N
-F0 "Q" -94 154 60 H V C CNN
-F1 "dk_Transistors-Bipolar-BJT-Single_2N2222" 200 0 60 V V C CNN
-F2 "digikey-footprints:TO-18-3" 200 200 60 H I L CNN
-F3 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=2N2221.PDF" 200 300 60 H I L CNN
-F4 "2N2222CS-ND" 200 400 60 H I L CNN "Digi-Key_PN"
-F5 "2N2222" 200 500 60 H I L CNN "MPN"
-F6 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
-F7 "Transistors - Bipolar (BJT) - Single" 200 700 60 H I L CNN "Family"
-F8 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=2N2221.PDF" 200 800 60 H I L CNN "DK_Datasheet_Link"
-F9 "/product-detail/en/central-semiconductor-corp/2N2222/2N2222CS-ND/4806844" 200 900 60 H I L CNN "DK_Detail_Page"
-F10 "TRANS NPN 30V 0.8A TO-18" 200 1000 60 H I L CNN "Description"
-F11 "Central Semiconductor Corp" 200 1100 60 H I L CNN "Manufacturer"
-F12 "Active" 200 1200 60 H I L CNN "Status"
-DRAW
-C 0 0 118 0 1 0 f
-P 2 0 1 0 -150 0 -100 0 N
-P 2 0 1 0 -140 0 0 0 N
-P 2 0 1 0 0 -50 100 -100 N
-P 2 0 1 0 0 50 100 100 N
-P 2 0 1 0 0 100 0 -100 N
-P 4 0 1 0 40 100 20 60 60 50 40 100 F
-X E 1 100 200 100 D 50 50 1 1 P
-X B 2 -200 0 100 R 50 50 1 1 I
-X C 3 100 -200 100 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # dk_Transistors-Bipolar-BJT-Single_2N2222A
 #
 DEF dk_Transistors-Bipolar-BJT-Single_2N2222A Q 0 0 Y Y 1 F N
@@ -784,6 +754,36 @@ P 4 0 1 0 60 -50 80 -90 40 -100 60 -50 F
 X E 1 100 -200 100 U 50 50 1 1 P
 X B 2 -200 0 100 R 50 50 1 1 I
 X C 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# dk_Transistors-Bipolar-BJT-Single_2N3904
+#
+DEF dk_Transistors-Bipolar-BJT-Single_2N3904 Q 0 0 Y Y 1 F N
+F0 "Q" -126 166 60 H V L CNN
+F1 "dk_Transistors-Bipolar-BJT-Single_2N3904" 206 0 60 V V C CNN
+F2 "digikey-footprints:TO-92-3" 200 200 60 H I L CNN
+F3 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=LSSGP072.PDF" 200 300 60 H I L CNN
+F4 "2N3904CS-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "2N3904" 200 500 60 H I L CNN "MPN"
+F6 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
+F7 "Transistors - Bipolar (BJT) - Single" 200 700 60 H I L CNN "Family"
+F8 "https://my.centralsemi.com/get_document.php?cmp=1&mergetype=pd&mergepath=pd&pdf_id=LSSGP072.PDF" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/central-semiconductor-corp/2N3904/2N3904CS-ND/4806876" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "TRANS NPN 40V TO-92" 200 1000 60 H I L CNN "Description"
+F11 "Central Semiconductor Corp" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+C 0 0 128 0 1 0 f
+P 2 0 1 0 -150 0 -100 0 N
+P 2 0 1 0 -140 0 0 0 N
+P 2 0 1 0 0 -50 100 -100 N
+P 2 0 1 0 0 50 100 100 N
+P 2 0 1 0 0 100 0 -100 N
+P 4 0 1 0 60 -50 80 -90 40 -100 60 -50 F
+X E 1 100 -200 100 U 50 50 1 1 P
+X C 2 100 200 100 D 50 50 1 1 P
+X B 3 -200 0 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
