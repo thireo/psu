@@ -68,6 +68,21 @@ void adc_init(void)
 	_delay_ms(5000);*/
 }
 
+void adc_start_conversion(uint8_t device_addr, uint8_t channel)
+{
+	i2c_start_wait(device_addr+I2C_WRITE);     // set device address and write mode
+	i2c_write(ADS1115_RA_CONFIG);
+	uint16_t config = 0x00;
+	config |= (1 << ADS1115_CFG_OS_BIT) | (1 << );
+	uint8_t channelShifted = ((channel & 0b111) << ADS1115_CFG_MUX_BIT-ADS1115_CFG_MUX_LENGTH+1);
+	config |= channelShifted;
+	config |= ((ADS1115_PGA_4P096 & 0b111) << ADS1115_CFG_PGA_BIT-ADS1115_CFG_PGA_LENGTH+1);
+	config |= (ADS1115_MODE_CONTINUOUS << ADS1115_CFG_MODE_BIT);
+	config |= ((ADS1115_RATE_64 & 0b111) << ADS1115_CFG_DR_BIT-ADS1115_CFG_DR_LENGTH+1);
+	
+	i2c_write()
+}
+
 void adc_extint_init(void)
 {
 	DDRC &= ~((1 << ADS_ALERT_0) | (1 << ADS_ALERT_1));

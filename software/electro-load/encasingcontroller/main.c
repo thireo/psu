@@ -6,15 +6,9 @@
  */ 
 
 
-#define F_CPU 8000000UL
-
-
 
 #include "main.h"
-#include "fan.h"
-#include "lcd.h"
-#include <string.h>
-#include "i2c.h"
+
 
 void init(void);
 

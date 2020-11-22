@@ -95,5 +95,9 @@
 #define ADS1115_COMP_QUE_DISABLE    0x03 // default
 
 
+//Values that might be used for sanity checking
+#define ADS1115_DEFAULT_CONFIG      0x8583  //Default value of the Config register
+#define ADS1115_DEFAULT_LOW_TRESH   0x8000  //Default value of the Low Treshold register
+#define ADS1115_DEFAULT_HIGH_TRESH  0x7FFF  //Default value of the High Treshold register
 
 #endif /* ADS1115_H_ */

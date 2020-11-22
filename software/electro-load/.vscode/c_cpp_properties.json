@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "ATMEGA328p",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/lib/**"
+            ],
+            "defines": [
+                "__AVR_ATMEGA328__",
+                "__OPTIMIZE__"
+            ],
+            "compilerPath": "/usr/bin/avr-gcc",
+            "cStandard": "c11",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
