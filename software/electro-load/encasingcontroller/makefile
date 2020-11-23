@@ -9,7 +9,7 @@ OBJCOPY = avr-objcopy
 AVRDUDE := avrdude
 
 #Options for avr-gcc
-CFLAGS = -g -Os -D__AVR_ATmega328P__ -L ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -B ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -o 
+CFLAGS = -w -g -Os -D__AVR_ATmega328P__ -L ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -B ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -o 
 
 #Linking options for avr-gcc
 LFLAGS = -Os -L ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -mmcu=atmega328p -o
@@ -50,10 +50,13 @@ INCLUDE += mcp4725.h
 
 
 # commands Section
-Burn : Build
+all : clean build
+.PHONY : all
+
+burn : build
 	$(AVRDUDE) $(DUDEFLAGS)
 
-Build : $(MAIN_APP).elf
+build : $(MAIN_APP).elf
 	$(OBJCOPY) $(HFLAGS) $< $(MAIN_APP).hex
 	
 $(MAIN_APP).elf: $(MAIN_APP).o
@@ -61,3 +64,7 @@ $(MAIN_APP).elf: $(MAIN_APP).o
 	
 $(MAIN_APP).o:$(SRC)
 	$(CC) $^ $(INCLUDE) $(CFLAGS) $@
+.PHONY : clean
+.IGNORE : clean
+clean : 
+	rm *.o *.elf *.hex

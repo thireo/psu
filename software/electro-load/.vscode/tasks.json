@@ -4,30 +4,16 @@
 		{
 			"type": "shell",
 			"label": "C/C++: avr-gcc build active file",
-			"command": "/usr/bin/avr-gcc",
+			"command": "make",
 			"args": [
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}",
-				"-B",
-				"/home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/**"
+				"all"
 			],
 			"options": {
-				"cwd": "${workspaceFolder}"
+				"cwd": "${workspaceFolder}/encasingcontroller"
 			},
-			"problemMatcher": {
-				"owner": "cpp",
-				"fileLocation": ["relative", "${workspaceFolder}"],
-				"pattern": {
-				  "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-				  "file": 1,
-				  "line": 2,
-				  "column": 3,
-				  "severity": 4,
-				  "message": 5
-				}
-			  },
+			"problemMatcher": [
+				"$gcc",
+			],
 			"group": "build"
 		}
 	]
