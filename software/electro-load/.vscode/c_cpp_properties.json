@@ -3,8 +3,8 @@
         {
             "name": "ATMEGA328p",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/lib/**"
+                "/home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/",
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "__AVR_ATmega328P__",
@@ -12,8 +12,9 @@
                 "__STDC_HOSTED__"
             ],
             "compilerPath": "/usr/bin/avr-gcc",
-            "cStandard": "c11",
-            "intelliSenseMode": "gcc-x64"
+            "cStandard": "c99",
+            "intelliSenseMode": "gcc-x64",
+            "cppStandard": "${default}"
         }
     ],
     "version": 4
