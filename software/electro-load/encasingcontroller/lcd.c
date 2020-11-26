@@ -201,24 +201,25 @@ void lcd_2004_init(void)
 	_delay_ms(50);
 	lcd_write_cmd(0x30);
 	_delay_us(50);
-	lcd_write_cmd(0b00100000);
-	lcd_write_cmd(0b11000000);
+	lcd_write_cmd(0b00100000);	//0x20
+	lcd_write_cmd(0b11000000);	//0xC0
 	_delay_us(50);
-	lcd_write_cmd(0b00100000);
-	lcd_write_cmd(0b11000000);
+	lcd_write_cmd(0b00100000);	//0x20
+	lcd_write_cmd(0b11000000);	//0xC0
 	_delay_us(50);
-	lcd_write_cmd(0b00000000);
-	lcd_write_cmd(0b11110000);
+	lcd_write_cmd(0b00000000);	//0x00
+	lcd_write_cmd(0b11110000);	//0xF0
 	_delay_us(50);
-	lcd_write_cmd(0b00000000);
-	lcd_write_cmd(0b00010000);
+	lcd_write_cmd(0b00000000);	//0x00
+	lcd_write_cmd(0b00010000);	//0x10
 	_delay_us(50);
-	lcd_write_cmd(0b00000000);
-	lcd_write_cmd(0b11110000);
+	lcd_write_cmd(0b00000000);	//0x00
+	lcd_write_cmd(0b11110000);	//0xF0
 	_delay_us(50);
-	lcd_write_cmd(0b00000000);
-	lcd_write_cmd(0b11100000);
+	lcd_write_cmd(0b00000000);	//0x00
+	lcd_write_cmd(0b11100000);	//0xE0
 	
+	lcd_write_cmd(0b00001100);	//0x0C - Display ON, Cursor and Blink OFF
 }
 
 void lcd_init2(void)
@@ -261,13 +262,19 @@ void lcd_set_line(unsigned char line)
 	switch(line)
 	{
 		case 1:
-		lcd_write_cmd(0x80);
-		break;
+			lcd_write_cmd(0x80);//80
+			break;
 		case 2:
-		lcd_write_cmd(0xC0);
-		break;
+			lcd_write_cmd(0xC0);//c0
+			break;
+		case 3:
+			lcd_write_cmd(0x94);
+			break;
+		case 4:
+			lcd_write_cmd(0xD4);
+			break;
 		default:
-		break;
+			break;
 	}
 }
 void lcd_clear_screen(void)
