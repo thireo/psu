@@ -96,8 +96,33 @@ void adc_extint_init(void)
 	
 }
 
+void adc_init_continuous(void)
+{
+	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
+	i2c_write(ADS1115_RA_CONFIG);
+	i2c_write(0b11100001);
+	i2c_write(0b10000011);
+	i2c_stop();
+	_delay_ms(100);
+	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
+	i2c_write(ADS1115_RA_CONVERSION);
+	i2c_stop();
+	_delay_ms(100);
+	i2c_start_wait(ADS_ADDR_1+I2C_READ);
+	uint8_t ret[2];
+	uint16_t bob = 0x0000;
+	ret[1] = (uint8_t)i2c_readAck();
+	ret[0] = (uint8_t)i2c_readNack();
+	bob = ret[0] | ret[1] << 8;
+	i2c_stop();
+	char* buf[16];
+	sprintf(buf,"%08d",bob);
+	lcd_send_string(buf);
+}
+
 ISR (PCINT1_vect)
 {
+	lcd_send_string("INT");
 	if(ADS_ALERT_0 == 0)
 	{
 		//Conversion ready from ADS0

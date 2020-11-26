@@ -9,7 +9,6 @@
 
 #include "main.h"
 
-
 void init(void);
 
 int main(void)
@@ -27,16 +26,18 @@ int main(void)
 	lcd_clear_screen();
 	fan_init();
 	_delay_ms(500);
-	adc_init();
+	
 	
 	dac_init();
+	adc_init();
+	
 	
 	PORTB |= (1<<RELAY_PORT);
 	_delay_ms(500);
 	PORTB &= ~(1<<RELAY_PORT);
 	_delay_ms(100);
 	PORTB |= (1<<RELAY_PORT);
-	_delay_ms(100);
+	_delay_ms(1000);
 	PORTB &= ~(1<<RELAY_PORT);
 
     /* Replace with your application code */
@@ -70,6 +71,12 @@ int main(void)
 		//_delay_ms(10);
 		lcd_send_string(buffer);
 		mcp_fast_write(dutycycle*15);
+		
+		lcd_set_line(3);
+		lcd_send_string("bob");
+		
+		lcd_set_line(4);
+		adc_init_continuous();
 		/*PORTB ^= _BV(PORTB2);
 		_delay_ms(10);*/
 		/*PORTB |= (1<<FAN_PWM_PORT);
