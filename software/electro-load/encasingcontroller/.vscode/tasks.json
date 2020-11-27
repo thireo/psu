@@ -9,7 +9,7 @@
 				"all"
 			],
 			"options": {
-				"cwd": "${workspaceFolder}/encasingcontroller"
+				"cwd": "${workspaceFolder}"
 			},
 			"problemMatcher": [
 				"$gcc",
