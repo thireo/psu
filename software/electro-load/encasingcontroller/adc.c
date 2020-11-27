@@ -12,7 +12,7 @@ void adc_init(void)
 {
 	i2c_init();
 	uint32_t val = 0x0000;
-	char* buf[16];
+	char buf[16];
 	
 	adc_extint_init();
 	
@@ -115,7 +115,7 @@ void adc_init_continuous(void)
 	ret[0] = (uint8_t)i2c_readNack();
 	bob = ret[0] | ret[1] << 8;
 	i2c_stop();
-	char* buf[16];
+	char buf[16];
 	sprintf(buf,"%08d",bob);
 	lcd_send_string(buf);
 }

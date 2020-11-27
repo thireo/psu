@@ -12,7 +12,7 @@
 void dac_init(void)
 {
 	uint32_t val;
-	char* buf[16];
+	char buf[16];
 	
 	
 	i2c_start_wait(MCP_ADDR_0+I2C_WRITE);     // set device address and write mode

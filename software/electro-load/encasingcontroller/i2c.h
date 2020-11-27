@@ -107,7 +107,7 @@ unsigned char i2c_readAck(void);
  @brief    read one byte from the I2C device, read is followed by a stop condition 
  @return   byte read from I2C device
  */
-unsigned char i2c_readNak(void);
+unsigned char i2c_readNack(void);
 
 /** 
  @brief    read one byte from the I2C device
