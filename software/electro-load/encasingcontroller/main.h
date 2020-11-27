@@ -12,8 +12,6 @@
 
 //#define F_CPU 8000000UL
 #define F_CPU 8000000UL
-#define __AVR_ATmega328P__
-#define __OPTIMIZE__
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -24,6 +22,7 @@
 #include <string.h>
 #include "i2c.h"
 #include "adc.h"
+#include "dac.h"
 
 
 //#define F_CPU 16000000UL
