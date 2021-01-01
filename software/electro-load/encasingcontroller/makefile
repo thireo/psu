@@ -1,33 +1,24 @@
 #Main application file name
 MAIN_APP = main
 #Main hex file path in windows format
-MAIN_HEX_PATH = ~/gits/psu/software/electro-load/encasingcontroller/$(MAIN_APP).hex
+MAIN_HEX_PATH = ~/gits/psu/software/electro-load/encasingcontroller/debug/$(MAIN_APP).hex
 
 # Compiler and other Section
 CC = avr-gcc
 OBJCOPY = avr-objcopy
+OBJDUMP = avr-objdump
+SIZE = avr-size
 AVRDUDE := avrdude
 
-#Options for avr-gcc
-CFLAGS = -w -g -Os -D__AVR_ATmega328P__ -L ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -B ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -o 
+CCFLAGS := -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wundef -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega328p"
+LDFLAGS :=
 
-#Linking options for avr-gcc
-LFLAGS = -Os -L ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/ -mmcu=atmega328p -o
+TARGETS:= main
+MAINS  := $(addsuffix .o, $(TARGETS) )
+OBJ    := adc.o dac.o fan.o i2c.o lcd.o $(MAINS) 
 
 #Options for HEX file generation
 HFLAGS = -j .text -j .data -O ihex
-
-#Options for avrdude to burn the hex file
-#MMCU model here according to avrdude options
-DUDEFLAGS = -c
-DUDEFLAGS += arduino 
-DUDEFLAGS += -p
-DUDEFLAGS += m8  
-DUDEFLAGS += -P 
-DUDEFLAGS += COM3 
-DUDEFLAGS += -b 
-DUDEFLAGS += 19200 
-DUDEFLAGS += -U flash:w:$(MAIN_HEX_PATH):i
 
 # Sources files needed for building the application 
 SRC = $(MAIN_APP).c
@@ -38,33 +29,34 @@ SRC += dac.c
 SRC += adc.c
 
 
-# The headers files needed for building the application
-INCLUDE = -I. 
-INCLUDE += main.h
+# The headers files needed for building the application 
 INCLUDE += adc.h
 INCLUDE += dac.h
 INCLUDE += fan.h
 INCLUDE += i2c.h
 INCLUDE += lcd.h
+INCLUDE += main.h
 INCLUDE += mcp4725.h
+INCLUDE += /home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/**
+
+
+.PHONY: all clean
 
 
 # commands Section
-all : clean build
-.PHONY : all
+all: $(TARGETS)
 
-burn : build
-	$(AVRDUDE) $(DUDEFLAGS)
+clean: 
+	rm -f $(TARGETS).srec $(TARGETS).elf $(TARGETS).hex $(TARGETS).map $(TARGETS).lss $(TARGETS).eep $(OBJ)
 
-build : $(MAIN_APP).elf
-	$(OBJCOPY) $(HFLAGS) $< $(MAIN_APP).hex
-	
-$(MAIN_APP).elf: $(MAIN_APP).o
-	$(CC) $(SRC) $(INCLUDE) $(LFLAGS) $@
-	
-$(MAIN_APP).o:$(SRC)
-	$(CC) $^ $(INCLUDE) $(CFLAGS) $@
-.PHONY : clean
-.IGNORE : clean
-clean : 
-	rm *.o *.elf *.hex
+$(OBJ): %.o : %.c $(INCLUDE)
+	@echo Building $<
+	$(CC) -c -o $@ $< $(CCFLAGS)
+
+$(TARGETS): % : $(filter-out $(MAINS), $(OBJ)) %.o
+	$(CC) -o $@.elf $(LIBS) $^ $(CCFLAGS) $(LDFLAGS)
+	$(OBJCOPY) -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  $(QUOTE)$(TARGETS).elf$(QUOTE) $(QUOTE)$(TARGETS).hex$(QUOTE)
+	$(OBJCOPY) -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex $(QUOTE)$(TARGETS).elf$(QUOTE) $(QUOTE)$(TARGETS).eep$(QUOTE) || exit 0
+	$(OBJDUMP) -h -S $(QUOTE)$(TARGETS).elf$(QUOTE) > $(QUOTE)$(TARGETS).lss$(QUOTE)
+	$(OBJCOPY) -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures $(QUOTE)$(TARGETS).elf$(QUOTE) $(QUOTE)$(TARGETS).srec$(QUOTE)
+	$(SIZE) $(QUOTE)$(TARGETS).elf$(QUOTE)
