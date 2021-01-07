@@ -3,10 +3,25 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "C/C++: avr-gcc build active file",
+			"label": "Build all",
 			"command": "make",
 			"args": [
 				"all"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc",
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "Clean",
+			"command": "make",
+			"args": [
+				"clean"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
