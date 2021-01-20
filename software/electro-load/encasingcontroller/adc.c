@@ -104,7 +104,7 @@ void adc_init_continuous(void)
 	lcd_set_line(1);
 	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b10000001);
+	i2c_write(0b11000001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
@@ -125,7 +125,7 @@ void adc_init_continuous(void)
 
 	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b10000001);
+	i2c_write(0b11000001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
@@ -146,7 +146,7 @@ void adc_init_continuous(void)
 	lcd_set_line(2);
 	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b10100001);
+	i2c_write(0b10010001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
@@ -167,7 +167,7 @@ void adc_init_continuous(void)
 
 	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b10100001);
+	i2c_write(0b11010001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
@@ -189,7 +189,7 @@ void adc_init_continuous(void)
 
 	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11000001);
+	i2c_write(0b11100001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
@@ -210,7 +210,7 @@ void adc_init_continuous(void)
 
 	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11000001);
+	i2c_write(0b11100001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
@@ -232,7 +232,7 @@ void adc_init_continuous(void)
 
 	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11100001);
+	i2c_write(0b11110001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
@@ -253,7 +253,7 @@ void adc_init_continuous(void)
 
 	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
 	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11100001);
+	i2c_write(0b11110001);
 	i2c_write(0b10000011);
 	i2c_stop();
 	_delay_ms(10);
