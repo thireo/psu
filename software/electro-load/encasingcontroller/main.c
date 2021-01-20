@@ -8,7 +8,7 @@
 
 
 #include "main.h"
-
+//#define F_CPU 8000000UL
 void init(void);
 
 int main(void)
@@ -39,6 +39,14 @@ int main(void)
 	PORTB |= (1<<RELAY_PORT);
 	_delay_ms(1000);
 	PORTB &= ~(1<<RELAY_PORT);
+
+	lcd_set_line(1);
+	lcd_send_string("Electronic Load");
+	lcd_set_line(2);
+	lcd_send_string("A. Thirsbro Devs");
+	lcd_set_line(3);
+	lcd_send_string("SW: 01");
+	_delay_ms(2000);
 
     /* Replace with your application code */
 	while(1){

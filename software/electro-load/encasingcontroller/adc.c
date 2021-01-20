@@ -4,7 +4,6 @@
  * Created: 22-05-2020 22:15:58
  *  Author: Andreas
  */ 
-#define F_CPU 8000000UL
 
 #include "adc.h"
 

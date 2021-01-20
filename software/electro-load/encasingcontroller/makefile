@@ -10,7 +10,10 @@ OBJDUMP = avr-objdump
 SIZE = avr-size
 AVRDUDE := avrdude
 
-CCFLAGS := -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wundef -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega328p"
+CCSYMBOLS = -DDEBUG 
+CCSYMBOLS += -DF_CPU=8000000UL
+
+CCFLAGS := -funsigned-char -funsigned-bitfields $(CCSYMBOLS) -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wundef -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega328p"
 LDFLAGS :=
 
 TARGETS:= main
@@ -40,8 +43,13 @@ INCLUDE += mcp4725.h
 INCLUDE += /home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/**
 
 
-.PHONY: all clean
+#./adc.o: ./adc.c
+#	@echo Building adc.c
+#	for i in $(INCLUDE); do\
+#		echo $(i)
 
+
+.PHONY: all clean flash
 
 # commands Section
 all: $(TARGETS)
@@ -60,3 +68,6 @@ $(TARGETS): % : $(filter-out $(MAINS), $(OBJ)) %.o
 	$(OBJDUMP) -h -S $(QUOTE)$(TARGETS).elf$(QUOTE) > $(QUOTE)$(TARGETS).lss$(QUOTE)
 	$(OBJCOPY) -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures $(QUOTE)$(TARGETS).elf$(QUOTE) $(QUOTE)$(TARGETS).srec$(QUOTE)
 	$(SIZE) $(QUOTE)$(TARGETS).elf$(QUOTE)
+
+flash: 
+	avrdude -p m328pb -c atmelice_isp -e -U flash:w:main.hex
