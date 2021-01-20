@@ -75,15 +75,15 @@ int main(void)
 		sprintf(buffer,"hello %d",dutycycle);
 		lcd_clear_screen();
 		//_delay_ms(10);
-		lcd_set_line(1);
+		//lcd_set_line(1);
 		//_delay_ms(10);
-		lcd_send_string(buffer);
-		mcp_fast_write(dutycycle*15);
+		//lcd_send_string(buffer);
+		//mcp_fast_write(dutycycle*15);
 		
-		lcd_set_line(3);
-		lcd_send_string("bob");
+		//lcd_set_line(3);
+		//lcd_send_string("bob");
 		
-		lcd_set_line(4);
+		//lcd_set_line(4);
 		adc_init_continuous();
 		/*PORTB ^= _BV(PORTB2);
 		_delay_ms(10);*/
