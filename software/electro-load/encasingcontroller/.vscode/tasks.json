@@ -30,6 +30,21 @@
 				"$gcc",
 			],
 			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "Flash",
+			"command": "make",
+			"args": [
+				"flash"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc",
+			],
+			"group": "test"
 		}
 	]
 }
