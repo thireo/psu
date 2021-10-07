@@ -3,11 +3,13 @@ MAIN_APP = main
 #Main hex file path in windows format
 MAIN_HEX_PATH = ~/gits/psu/software/electro-load/encasingcontroller/debug/$(MAIN_APP).hex
 
+TOOL_PATH = ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/bin
+
 # Compiler and other Section
-CC = avr-gcc
-OBJCOPY = avr-objcopy
-OBJDUMP = avr-objdump
-SIZE = avr-size
+CC = $(TOOL_PATH)/avr-gcc
+OBJCOPY = $(TOOL_PATH)/avr-objcopy
+OBJDUMP = $(TOOL_PATH)/avr-objdump
+SIZE = $(TOOL_PATH)/avr-size
 AVRDUDE := avrdude
 
 CCSYMBOLS = -DDEBUG 
