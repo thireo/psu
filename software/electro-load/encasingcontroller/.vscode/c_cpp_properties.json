@@ -8,7 +8,6 @@
             ],
             "defines": [
                 "__AVR_ATmega328P__"
-
             ],
             "compilerPath": "/home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/bin/avr-gcc",
             "cStandard": "c99",
