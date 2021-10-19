@@ -13,7 +13,6 @@ void init(void);
 
 int main(void)
 {
-	printf("still trouble ahead. no ;")
 	//int dutycycle = 0x3FFF;
 	unsigned int dutycycle = 300;
 	static char buffer[64];
