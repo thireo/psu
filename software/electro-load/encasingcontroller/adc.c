@@ -139,7 +139,6 @@ void adc_init_continuous(void)
 	ret[0] = (uint8_t)i2c_readNack();
 	bob = ret[0] | ret[1] << 8;
 	i2c_stop();
-	buf[16];
 	sprintf(buf,"%04u",bob);
 	lcd_send_string(buf);
 
@@ -181,7 +180,6 @@ void adc_init_continuous(void)
 	ret[0] = (uint8_t)i2c_readNack();
 	bob = ret[0] | ret[1] << 8;
 	i2c_stop();
-	buf[16];
 	sprintf(buf,"%04u",bob);
 	lcd_send_string(buf);
 
@@ -224,7 +222,6 @@ void adc_init_continuous(void)
 	ret[0] = (uint8_t)i2c_readNack();
 	bob = ret[0] | ret[1] << 8;
 	i2c_stop();
-	buf[16];
 	sprintf(buf,"%04u",bob);
 	lcd_send_string(buf);
 
@@ -267,7 +264,6 @@ void adc_init_continuous(void)
 	ret[0] = (uint8_t)i2c_readNack();
 	bob = ret[0] | ret[1] << 8;
 	i2c_stop();
-	buf[16];
 	sprintf(buf,"%04u",bob);
 	lcd_send_string(buf);
 }
