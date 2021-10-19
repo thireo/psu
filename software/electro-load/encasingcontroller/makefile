@@ -15,7 +15,7 @@ AVRDUDE := avrdude
 CCSYMBOLS = -DDEBUG 
 CCSYMBOLS += -DF_CPU=8000000UL
 
-CCFLAGS := -funsigned-char -funsigned-bitfields $(CCSYMBOLS) -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wundef -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega328p"
+CCFLAGS := -Wextra -funsigned-char -funsigned-bitfields $(CCSYMBOLS) -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wundef -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega328p"
 LDFLAGS :=
 
 TARGETS:= main
