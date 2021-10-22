@@ -1,26 +1,27 @@
 #Main application file name
 MAIN_APP = main
 #Main hex file path in windows format
-MAIN_HEX_PATH = ~/gits/psu/software/electro-load/encasingcontroller/debug/$(MAIN_APP).hex
+#MAIN_HEX_PATH = ~/gits/psu/software/electro-load/encasingcontroller/debug/$(MAIN_APP).hex
+MAIN_HEX_PATH = /usr/src/test/bob/$(MAIN_APP).hex
 
-TOOL_PATH = ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/bin
-
+#TOOL_PATH = ~/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/bin
+TOOL_PATH = /usr/src/avr8-gnu-toolchain-linux_x86_64/bin
 # Compiler and other Section
 CC = $(TOOL_PATH)/avr-gcc
 OBJCOPY = $(TOOL_PATH)/avr-objcopy
 OBJDUMP = $(TOOL_PATH)/avr-objdump
 SIZE = $(TOOL_PATH)/avr-size
-AVRDUDE := avrdude
+AVRDUDE := avrdude.exe
 
-CCSYMBOLS = -DDEBUG 
+CCSYMBOLS = -DDEBUG
 CCSYMBOLS += -DF_CPU=8000000UL
 
-CCFLAGS := -funsigned-char -funsigned-bitfields $(CCSYMBOLS) -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wundef -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega328p"
+CCFLAGS := -fno-lto -fno-use-linker-plugin -funsigned-char -funsigned-bitfields $(CCSYMBOLS) -I"$(TOOL_PATH)/../avr/include"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -Wextra -Wundef -mmcu=atmega328p -B "$(TOOL_PATH)/../avr"
 LDFLAGS :=
 
 TARGETS:= main
 MAINS  := $(addsuffix .o, $(TARGETS) )
-OBJ    := adc.o dac.o fan.o i2c.o lcd.o $(MAINS) 
+OBJ    := adc.o dac.o fan.o i2c.o lcd.o $(MAINS)
 
 #Options for HEX file generation
 HFLAGS = -j .text -j .data -O ihex
@@ -42,7 +43,7 @@ INCLUDE += i2c.h
 INCLUDE += lcd.h
 INCLUDE += main.h
 INCLUDE += mcp4725.h
-INCLUDE += /home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/**
+#INCLUDE += /home/at/gits/vscodes/avr8-gnu-toolchain-linux_x86_64/avr/**
 
 
 #./adc.o: ./adc.c
