@@ -1,0 +1,1 @@
+docker run --rm -v C:/users/andreas/gits/powersupplyunit/software/electro-load/encasingcontroller://usr/src/test -w //usr/src/test -v C:/users/andreas/gits/vscodes/avr8-gnu-toolchain-linux_x86_64://usr/src/avr8-gnu-toolchain-linux_x86_64 ubunta make -s clean all
