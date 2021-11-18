@@ -78,7 +78,8 @@ void adc_start_conversion(uint8_t device_addr, uint8_t channel)
 	config |= ((ADS1115_PGA_4P096 & 0b111) << ADS1115_CFG_PGA_BIT-ADS1115_CFG_PGA_LENGTH+1);
 	config |= (ADS1115_MODE_CONTINUOUS << ADS1115_CFG_MODE_BIT);
 	config |= ((ADS1115_RATE_64 & 0b111) << ADS1115_CFG_DR_BIT-ADS1115_CFG_DR_LENGTH+1);
-	
+	i2c_write((config >> 8) & 0xFF);
+	i2c_write(config & 0xFF);
 	//i2c_write()
 }
 
@@ -97,178 +98,33 @@ void adc_extint_init(void)
 
 void adc_init_continuous(void)
 {
+	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
+	i2c_write(ADS1115_RA_CONFIG);
+	i2c_write(0b11100011);
+	i2c_write(0b10000011);
+	i2c_stop();
+	_delay_ms(100);
+	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
+	i2c_write(ADS1115_RA_CONVERSION);
+	i2c_stop();
+	_delay_ms(100);
+	i2c_start_wait(ADS_ADDR_0+I2C_READ);
 	uint8_t ret[2];
 	uint16_t bob = 0x0000;
+	ret[1] = (uint8_t)i2c_readAck();
+	ret[0] = (uint8_t)i2c_readNack();
+	bob = ret[0] | ret[1] << 8;
+	i2c_stop();
 	char buf[16];
+	
 
-	lcd_set_line(1);
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11000001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	sprintf(buf,"%04u",bob);
-	lcd_send_string(buf);
+	float delta = 2.020;	//Roughly comparable to 22C with current HW settings.
+	float tt = (float)(bob*4.096*2)/65535;
+	tt = (tt-delta)/0.02+22;
 
-	lcd_send_string(" - ");
+	//sprintf(buf,"%05hu - %.3f - %.2f",bob,(float)(bob*4.096*2)/65535,tt);
+	sprintf(buf,"%.2fC",tt);
 
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11000001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	buf[16];
-	sprintf(buf,"%04u",bob);
-	lcd_send_string(buf);
-
-	lcd_set_line(2);
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b10010001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	sprintf(buf,"%04u",bob);
-	lcd_send_string(buf);
-
-	lcd_send_string(" - ");
-
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11010001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	buf[16];
-	sprintf(buf,"%04u",bob);
-	lcd_send_string(buf);
-
-	lcd_set_line(3);
-
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11100001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	sprintf(buf,"%04u",bob);
-	lcd_send_string(buf);
-
-	lcd_send_string(" - ");
-
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11100001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	buf[16];
-	sprintf(buf,"%04u",bob);
-	lcd_send_string(buf);
-
-	lcd_set_line(4);
-
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11110001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_1+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	sprintf(buf,"%04u",bob);
-	lcd_send_string(buf);
-
-	lcd_send_string(" - ");
-
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONFIG);
-	i2c_write(0b11110001);
-	i2c_write(0b10000011);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_WRITE);
-	i2c_write(ADS1115_RA_CONVERSION);
-	i2c_stop();
-	_delay_ms(10);
-	i2c_start_wait(ADS_ADDR_0+I2C_READ);
-	bob = 0x0000;
-	ret[1] = (uint8_t)i2c_readAck();
-	ret[0] = (uint8_t)i2c_readNack();
-	bob = ret[0] | ret[1] << 8;
-	i2c_stop();
-	buf[16];
-	sprintf(buf,"%04u",bob);
 	lcd_send_string(buf);
 }
 

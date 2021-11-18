@@ -11,7 +11,6 @@
 
 
 //#define F_CPU 8000000UL
-//
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -24,7 +23,7 @@
 #include "adc.h"
 #include "dac.h"
 
-
+#define SW_VERSION 03
 //#define F_CPU 16000000UL
 //2000000UL
 

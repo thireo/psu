@@ -19,5 +19,5 @@
 void adc_init(void);
 void adc_extint_init(void);
 void adc_init_continuous(void);
-
+void adc_start_conversion(uint8_t device_addr, uint8_t channel);
 #endif /* ADC_H_ */

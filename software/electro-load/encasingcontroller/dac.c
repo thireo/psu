@@ -5,6 +5,7 @@
  *  Author: Andreas
  */ 
 //#define F_CPU 8000000UL
+//#define F_CPU 8000000UL
 #include "dac.h"
 
 
