@@ -6,14 +6,27 @@
 			"label": "Build all",
 			"command": "make",
 			"args": [
-				"all"
+				"-S",
+				"clean",
+				"all",
+				"-C",
+				"Debug",
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-			"problemMatcher": [
-				"$gcc",
-			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": ["relative", "${workspaceFolder}/encasingcontroller"],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			},
 			"group": "build"
 		},
 		{
@@ -21,7 +34,9 @@
 			"label": "Clean",
 			"command": "make",
 			"args": [
-				"clean"
+				"clean",
+				"-C",
+				"Debug"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
@@ -36,7 +51,9 @@
 			"label": "Flash",
 			"command": "make",
 			"args": [
-				"flash"
+				"flash",
+				"-C",
+				"Debug"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
